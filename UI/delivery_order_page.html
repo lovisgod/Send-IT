@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Send IT  </title>
+  <meta charset="utf-8" />
+  <link href="landing.css" type="text/css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="landing.js"></script>
+</head>
+<body>
+  <header>
+    <div class = "header_box">
+      <div class ="sendIT_logo">
+        <h2 id = "send_it">Send
+          <span id = "it_color">IT</span></h2>
+      </div>
+
+      <div class="nav">
+
+      <div class ="nav_button1">
+        <button class ="nav_deliver" id = "deliver_button" onclick="dropdownContent1()">Delivery Order
+          <span>
+            <img class="dropdown-arrow" src="images/drop-arrow.png" alt="drop arrow">
+          </span>
+        </button>
+        <div id ="dropcontent-1" class="dropdown-content1" >
+            <a href="./delivery_order_page.html">BOOK AN ORDER</a>
+            <a href="./change_destination.html">CHANGE ORDER DESTINATION</a>
+            <a class="history_in_landing_page" onclick="history()">ORDER HISTORY</a>
+          </div>
+      </div>
+
+      <div class = "nav_button2">
+        <button class="nav_account" id = "account_button" onclick="accountdropdown()">Account
+           <span>
+          <img class="dropdown-arrow" src="images/drop-arrow.png" alt="drop arrow">
+        </span>
+      </button>
+        <div id="dropcontent-2" class="dropdown-content2">
+          <a href="./login.html">Send IT Admin</a>
+          <a href="#">My Profile</a>
+          <a href="./login.html">OPEN AN ACCOUNT</a>
+        </div>
+      </div>
+
+      <div class ="contact_us">
+        <h2 id ="contact_id">08168686988
+          <span>
+            <img class="dropdown-arrow" src="images/phone.png" alt="contact">
+          </span>
+        </h2>
+      </div>
+    </div>
+
+    </div>
+  </header>
+  <div class = "second_header_box">
+        <div class ="delivery_manage">
+          <h2 id = "delivery_man">Delivery Order Manager</h2>
+        </div>
+        <div class="second_nav">
+        <div class ="nav_button">
+        <a id ="signIn_button"  href="./login.html" >SignIn/SignUp
+            <span>
+              <img class="dropdown-arrow" src="images/user.png" alt="drop arrow">
+            </span>
+          </a>
+        </div>
+      </div>
+  
+      </div>
+
+  <div class="desc">
+      <h2>FROM (Pick Up Location)</h2>
+      <h2>TO (Delivery Location)</h2>
+  </div>
+  <div class="book-order">
+      <div class ="book_order_right">
+      <div class="form-item">
+            <div class="form-label">
+                <label for="name">Name</label>
+            </div>
+            <div class="form-field">
+                <input type="text" id="name" placeholder="First Name" class="input-delivery">
+            </div>
+     </div><br/>       
+     <div class="form-item">
+            <div class="form-label">
+               <label for="address">Address</label>
+            </div>
+            <div class="form-field">
+               <input type="text" id="address" placeholder="sender's address" class="input-delivery">
+             </div>
+    </div><br/>        
+    <div class="form-item">
+            <div class="form-label">
+               <label for="country">Country</label>
+            </div>
+            <div class="form-field">
+               <input type="text" id="country" placeholder="Country" class="input-delivery">
+            </div>
+      </div><br/>
+
+      <div class="form-item">
+            <div class="form-label">
+                <label for="postal">Postal Code</label>
+            </div>
+            <div class="form-field">
+                <input type="text" id="postal" placeholder="Postal Code" class="input-delivery">
+            </div>
+     </div><br/>       
+     <div class="form-item">
+            <div class="form-label">
+               <label for="city">City</label>
+            </div>
+            <div class="form-field">
+               <input type="text" id="city" placeholder="City" class="input-delivery">
+             </div>
+    </div><br/>        
+    <div class="form-item">
+            <div class="form-label">
+               <label for="email">Email</label>
+            </div>
+            <div class="form-field">
+               <input type="text" id="email" placeholder="Email" class="input-delivery">
+            </div>
+      </div><br/>
+      <div class="form-item">
+            <div class="form-label">
+               <label for="weight">Weight</label>
+            </div>
+            <div class="form-field">
+               <input type="text" id="weight" placeholder="Weight" class="input-delivery">
+            </div>
+      </div><br/>
+
+    </div>
+    <div class ="book_order_left">
+            <div class="form-item">
+                  <div class="form-label">
+                      <label for="name">Name</label>
+                  </div>
+                  <div class="form-field">
+                      <input type="text" id="name" placeholder="First Name" class="input-delivery">
+                  </div>
+           </div><br/>       
+           <div class="form-item">
+                  <div class="form-label">
+                     <label for="address">Address</label>
+                  </div>
+                  <div class="form-field">
+                     <input type="text" id="address" placeholder="sender's address" class="input-delivery">
+                   </div>
+          </div><br/>        
+          <div class="form-item">
+                  <div class="form-label">
+                     <label for="country">Country</label>
+                  </div>
+                  <div class="form-field">
+                     <input type="text" id="country" placeholder="Country" class="input-delivery">
+                  </div>
+            </div><br/>
+      
+            <div class="form-item">
+                  <div class="form-label">
+                      <label for="postal">Postal Code</label>
+                  </div>
+                  <div class="form-field">
+                      <input type="text" id="postal" placeholder="Postal Code" class="input-delivery">
+                  </div>
+           </div><br/>       
+           <div class="form-item">
+                  <div class="form-label">
+                     <label for="city">City</label>
+                  </div>
+                  <div class="form-field">
+                     <input type="text" id="city" placeholder="City" class="input-delivery">
+                   </div>
+          </div><br/>        
+          <div class="form-item">
+                  <div class="form-label">
+                     <label for="email">Email</label>
+                  </div>
+                  <div class="form-field">
+                     <input type="text" id="email" placeholder="Email" class="input-delivery">
+                  </div>
+            </div><br/>
+            <div class="form-item">
+                  <div class="form-label">
+                     <label for="weight">Weight</label>
+                  </div>
+                  <div class="form-field">
+                     <input type="text" id="weight" placeholder="Weight" class="input-delivery">
+                  </div>
+            </div><br/>
+      
+          </div>
+ </div>
+
+ <div class="btn-deliver"><a href="./payment_page.html"> Submmit Order</a></div>
+ 
+  <footer>
+    <div class ="footer_box">
+      <div class = "footer_content" id ="first">
+        <h2>Send   <span id = "it_color">IT</span></h2></h2>
+        <h4>About Send IT</h4>
+        <h2>GET CONNECTED</h2>
+        <div class="ft_images">
+        <div class ="first_images">
+          <img src="images/facebook.png" alt="facebook">
+        </div>
+        <div class ="first_images">
+          <img src="images/instagram.png" alt="instagram">
+        </div>
+        <div class ="first_images">
+          <img src="images/twitter.png" alt="twitter">
+        </div>
+        </div>
+      </div>
+      <div class= "footer_content" id="second">
+        <h2>CONTACT US</h2>
+        <h4> <img class = "image" src="images/phone.png" alt="phone"> 08165656988,08156453465</h4>
+        <h4> <img class = "image" src="images/home_addrress.png" alt="address">h34, Ewet Housing
+            Estate,<br><pre>     Uyo, Akwa-Ibom Nigeria</pre></h4>
+        <h4> <img class = "image" src="images/mail.png" alt="phone">olifedayo94@gmail.com</h4>
+      </div>
+    </div>
+
+  </footer>
+</body>     
+</html>    

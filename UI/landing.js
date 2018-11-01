@@ -45,6 +45,6 @@ window.onclick = function(e) {
       window.location.replace("./landing.html");
   }
   function history(){
-      window.location.replace("./order_history.html");
+      window.location.href="./order_history.html";
   }
   

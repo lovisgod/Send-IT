@@ -36,3 +36,7 @@ $(".login").click(function(){
   $(".card").click(function(){
     window.location.href="./order_details.html";
   })
+
+  $(".admin_card").click(function(){
+    window.location.href="./admin_order_details.html";
+  })

@@ -6,7 +6,6 @@
   <link href="landing.css" type="text/css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="landing.js"></script>
-  
 </head>
 <body>
   <header>
@@ -27,7 +26,7 @@
         <div id ="dropcontent-1" class="dropdown-content1" >
             <a href="./delivery_order_page.html">BOOK AN ORDER</a>
             <a href="./change_destination.html">CHANGE ORDER DESTINATION</a>
-            <a class="history_in_landing_page" onclick="history()">ORDER HISTORY</a>
+            <a href="./order_history.html">ORDER HISTORY</a>
           </div>
       </div>
 
@@ -38,15 +37,31 @@
         </span>
       </button>
         <div id="dropcontent-2" class="dropdown-content2">
-          <a href="./admin_login.html">Send IT Admin</a>
-          <a href="./order_history.html">My Profile</a>
+          <a href="./login.html">Send IT Admin</a>
+          <a href="#">My Profile</a>
           <a href="./login.html">OPEN AN ACCOUNT</a>
         </div>
       </div>
-      </html>
+
+      <div class ="contact_us">
+        <h2 id ="contact_id">08168686988
+          <span>
+            <img class="dropdown-arrow" src="images/phone.png" alt="contact">
+          </span>
+        </h2>
+      </div>
+    </div>
+
+    </div>
+  </header>
+  <div class = "second_header_box">
+      <div class ="delivery_manage">
+        <h2 id = "delivery_man">Delivery Order Manager</h2>
+      </div>
+      <div class="second_nav">
       <div class ="nav_button">
       <a id ="signIn_button"  href="./login.html" >SignIn/SignUp
-          <span></html>
+          <span>
             <img class="dropdown-arrow" src="images/user.png" alt="drop arrow">
           </span>
         </a>
@@ -54,38 +69,41 @@
     </div>
 
     </div>
-  </header>
 
-  <div class = "intro">
-    <img id ="afternav" src="images/background.jpg" alt="man image">
-  </div>
-  <div class="serviceArea">
-  <h2 id="ourservices">OUR SERVICES</h2>
-  <div class ="services">
-    <div id ="land">
-        <img class ="service_image" src ="images/truck.png" alt="truck">
-          <h3 class ="service_title"> GROUND SHIPPING</h3>
-          <p>In the midst of hazardous land transportation, we make sure we provide
-            a safe and and fast land transportation for transporting your goods to their
-            destination .</p>
+    <div class="user_image">
+        <img src="./images/profile.png"/>
+        <h4>CHANGE PICTURE</h4>
     </div>
-    <div id ="ship">
-        <img class ="service_image" src ="images/air.jpg" alt="air">
-          <h3 class ="service_title"> AIR SHIPPING</h3>
-          <p>Flying is one of the fastest means of transportation so we provide a means of transporting your
-            goods by air. our crafts are safe and secure with the service of good and competent
-            pilots.</p>
+    <aside class="order_history_aside">
+        <h4>ORDER HISTORY</h4>
+        <div class="scrolling_page"></div>
+            <div class="card">
+               <div> <h4>from: Ado, Nigeria</h4></div>
+                <div><h4>to: Lagos, Nigeria</h4></div>
+                <div><h4>Date: 24/12/2018</h4></div>
+                <div><h4>Weight: 20Kg</h4></div>
+            </div>
+            <div class="card">
+                    <div> <h4>from: Ado, Nigeria</h4></div>
+                     <div><h4>to: Lagos, Nigeria</h4></div>
+                     <div><h4>Date: 24/12/2018</h4></div>
+                     <div><h4>Weight: 20Kg</h4></div>
+            </div>
+        </div>
+    </aside>
+    <div class="user_details">
+        <h4>AYOOLUWA OLOSUNDE ADETUNMISE</h4>
+        <h4>olifedayo94@gmail.com</h4>
+        <h4>DELIVERED ORDERS</h4>
+        <h5>3</h5>
+        <h4>ORDERS IN TRANSIT</h4>
+        <h5>3</h5>
+        <h4>ORDERS YET TO MOVE</h4>
+        <h5>3</h5>
     </div>
-    <div id ="air">
-        <img class ="service_image" src ="images/ship.jpg" alt="ship">
-          <h3 class ="service_title">SEA SHIPPING</h3>
-          <p>Our Ships are safe and fast for the movement of your
-          parcels from continents to others. we believe in safety so we put our outmost
-          care in checking the weather before sailing to avoid accidents that could affect
-          your parcels</p>
-    </div>
-  </div>
-  </div>
+
+ 
+
   <footer>
     <div class ="footer_box">
       <div class = "footer_content" id ="first">
@@ -113,7 +131,8 @@
       </div>
     </div>
 
-
   </footer>
-</body>
-</html>
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="jqeury.js"></script>
+</body>     
+</html>    
