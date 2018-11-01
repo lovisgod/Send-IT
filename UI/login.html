@@ -26,8 +26,8 @@
         </button>
         <div id ="dropcontent-1" class="dropdown-content1" >
             <a href="./delivery_order_page.html">BOOK AN ORDER</a>
-            <a href="./change_destination.html">CHANGE ORDER DESTINATION</a>
-            <a class="history_in_landing_page" onclick="history()">ORDER HISTORY</a>
+            <a href="#">CHANGE ORDER DESTINATION</a>
+            <a href="#">ORDER HISTORY</a>
           </div>
       </div>
 
@@ -39,53 +39,54 @@
       </button>
         <div id="dropcontent-2" class="dropdown-content2">
           <a href="./login.html">Send IT Admin</a>
-          <a href="./admin_profile.html">My Profile</a>
+          <a href="#">My Profile</a>
           <a href="./login.html">OPEN AN ACCOUNT</a>
         </div>
       </div>
-      </html>
-      <div class ="nav_button">
-      <a id ="signIn_button"  href="./login.html" >SignIn/SignUp
-          <span></html>
-            <img class="dropdown-arrow" src="images/user.png" alt="drop arrow">
+
+      <div class ="contact_us">
+        <h2 id ="contact_id">08168686988
+          <span>
+            <img class="dropdown-arrow" src="images/phone.png" alt="contact">
           </span>
-        </a>
+        </h2>
       </div>
     </div>
 
     </div>
   </header>
 
-  <div class = "intro">
-    <img id ="afternav" src="images/background.jpg" alt="man image">
+  <div class="container">
+      
+    <div class="login">Sign In</div>
+    <div class="signup">Sign Up</div>
+     
+    <div class="login-form">
+        <input type="text" placeholder="Email" class="input"><br />
+        <input type="password" placeholder="Password" class="input"><br />
+        <div class="btn">Sign  In</div>
+        <span id="reset-button"><a>Forgot Password?</a></span>
+     </div>
+
+     <div class="signup-form">
+      <input type="text" placeholder="First Name" class="input"><br />
+      <input type="text" placeholder="Last Name" class="input"><br />
+      <input type="text" placeholder="Email"class="input"><br/>
+      <input type="password" placeholder="Choose a Password" class="input"><br />
+      <div class="btn">Sign Up</div>
+   </div>
+
+   <div class="reset-form">
+    <input type="text" placeholder="Email" class="input"><br />
+    <input type="text" placeholder="New Password" class="input"><br />
+    <input type="text" placeholder="re-password"class="input"><br/>
+    <div class="btn">Reset</div>
+ </div>
+    
   </div>
-  <div class="serviceArea">
-  <h2 id="ourservices">OUR SERVICES</h2>
-  <div class ="services">
-    <div id ="land">
-        <img class ="service_image" src ="images/truck.png" alt="truck">
-          <h3 class ="service_title"> GROUND SHIPPING</h3>
-          <p>In the midst of hazardous land transportation, we make sure we provide
-            a safe and and fast land transportation for transporting your goods to their
-            destination .</p>
-    </div>
-    <div id ="ship">
-        <img class ="service_image" src ="images/air.jpg" alt="air">
-          <h3 class ="service_title"> AIR SHIPPING</h3>
-          <p>Flying is one of the fastest means of transportation so we provide a means of transporting your
-            goods by air. our crafts are safe and secure with the service of good and competent
-            pilots.</p>
-    </div>
-    <div id ="air">
-        <img class ="service_image" src ="images/ship.jpg" alt="ship">
-          <h3 class ="service_title">SEA SHIPPING</h3>
-          <p>Our Ships are safe and fast for the movement of your
-          parcels from continents to others. we believe in safety so we put our outmost
-          care in checking the weather before sailing to avoid accidents that could affect
-          your parcels</p>
-    </div>
-  </div>
-  </div>
+        
+    
+
   <footer>
     <div class ="footer_box">
       <div class = "footer_content" id ="first">
@@ -113,7 +114,10 @@
       </div>
     </div>
 
-
   </footer>
-</body>
-</html>
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="jqeury.js"></script>
+</body>     
+</html>    
