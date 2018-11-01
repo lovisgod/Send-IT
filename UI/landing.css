@@ -539,8 +539,6 @@ outline: none;
   border: none;
   background-color: inherit;
   text-decoration: none;
-
-
 }
 .user_details{
   width: 400px;
@@ -590,3 +588,123 @@ aside {
   cursor: pointer;
 }
 
+
+.admin_card{
+  width: 70%;
+  padding: 10px;
+  height: 160px;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  border: #3e3e40;
+  border-style: dotted;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+#order_admin_title{
+  margin-left: 500px;
+  font-family: cursive;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30px;
+}
+.customer_history{
+  background: blue;
+  width: 50%;
+  margin-left: 350px;
+  padding: 10px;
+  height:390px;
+  overflow-y: scroll;
+}
+.admin_card div{
+    margin-left: 110px;
+}
+#order_admin_title_detailed{
+  margin-left: 400px;
+  font-family: cursive;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.order_container_1{
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  width: 700px;
+  height:500px;
+  margin: 25%;
+  margin-top:10px;
+  margin-bottom: 10px;
+  background:#D3D3D3;
+}
+
+.vertical_line_1{
+  height:300px;
+  width:1px; /* edit this if you want */
+  background-color:#000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ }
+
+ .change_destination_1{
+  background:inherit;
+  padding-left: 20px;
+  padding-right:0;
+  width: 220px;
+  margin-bottom: 1px;
+  margin-top: 150px;
+  color:#E06262;
+}
+
+.cancel_the_order_1{
+  background:inherit;
+  padding-left: 20px;
+  padding-right:0;
+  width: 220px;
+  margin-bottom: 1px;
+  margin-top: 10px;
+  color: #E06262;
+}
+
+#status{
+  background:#ffffff;
+  padding-left: 20px;
+  padding-right:0;
+  width: 210px;
+  margin-bottom: 1px;
+  margin-top: 80px;
+}
+
+#location{
+  background:#ffffff;
+  padding-left: 20px;
+  padding-right:0;
+  width: 210px;
+  margin-bottom: 1px;
+  margin-top: 10px;
+}
+
+.btn_statuschange{
+  background:#E06262;
+  padding-left: 10px;
+  padding-right:0;
+  width: 70px;
+  margin-bottom: 1px;
+  margin-left: 260px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.btn_statuschange a{
+  
+  font-size: 30px;
+  font-weight: normal;
+  color:white;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+
+
+}
