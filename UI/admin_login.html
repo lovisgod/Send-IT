@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Send IT  </title>
+  <meta charset="utf-8" />
+  <link href="../landing.css" type="text/css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../landing.js"></script>
+  
+</head>
+<body>
+  <header>
+    <div class = "header_box">
+      <div class ="sendIT_logo">
+        <h2 id = "send_it"><a href="../index.html">Send</a>
+          <span id = "it_color">IT</span></h2>
+      </div>
+
+      <div class="nav">
+
+      <div class ="nav_button1">
+        <button class ="nav_deliver" id = "deliver_button" onclick="dropdownContent1()">Delivery Order
+          <span>
+            <img class="dropdown-arrow" src="../images/drop-arrow.png" alt="drop arrow">
+          </span>
+        </button>
+        <div id ="dropcontent-1" class="dropdown-content1" >
+            <a href="./delivery_order_page.html">BOOK AN ORDER</a>
+            <a href="#">CHANGE ORDER DESTINATION</a>
+            <a href="./admin_profile.html">ORDER HISTORY</a>
+          </div>
+      </div>
+
+      <div class = "nav_button2">
+        <button class="nav_account" id = "account_button" onclick="accountdropdown()">Account
+           <span>
+          <img class="dropdown-arrow" src="../images/drop-arrow.png" alt="drop arrow">
+        </span>
+      </button>
+        <div id="dropcontent-2" class="dropdown-content2">
+          <a href="./admin_login.html">Send IT Admin</a>
+          <a href="#">My Profile</a>
+          <a href="./admin_login.html">OPEN AN ACCOUNT</a>
+        </div>
+      </div>
+
+      <div class ="contact_us">
+        <h2 id ="contact_id">08168686988
+          <span>
+            <img class="dropdown-arrow" src="../images/phone.png" alt="contact">
+          </span>
+        </h2>
+      </div>
+    </div>
+
+    </div>
+  </header>
+
+  <div class="container">
+      
+    <div class="login">Sign In</div>
+    <div class="signup">Sign Up</div>
+     
+    <div class="login-form">
+        <input type="text" placeholder="Email" class="input"><br />
+        <input type="password" placeholder="Password" class="input"><br />
+        <div class="btn_admin">Sign  In</div>
+        <span id="reset-button"><a>Forgot Password?</a></span>
+     </div>
+
+     <div class="signup-form">
+      <input type="text" placeholder="First Name" class="input"><br />
+      <input type="text" placeholder="Last Name" class="input"><br />
+      <input type="text" placeholder="Email"class="input"><br/>
+      <input type="password" placeholder="Choose a Password" class="input"><br />
+      <div class="btn_admin">Sign Up</div>
+   </div>
+
+   <div class="reset-form">
+    <input type="text" placeholder="Email" class="input"><br />
+    <input type="text" placeholder="New Password" class="input"><br />
+    <input type="text" placeholder="re-password"class="input"><br/>
+    <div class="btn_admin">Reset</div>
+ </div>
+    
+  </div>
+        
+    
+
+  <footer>
+    <div class ="footer_box">
+      <div class = "footer_content" id ="first">
+        <h2>Send   <span id = "it_color">IT</span></h2></h2>
+        <h4>About Send IT</h4>
+        <h2>GET CONNECTED</h2>
+        <div class="ft_images">
+        <div class ="first_images">
+          <img src="../images/facebook.png" alt="facebook">
+        </div>
+        <div class ="first_images">
+          <img src="../images/instagram.png" alt="instagram">
+        </div>
+        <div class ="first_images">
+          <img src="../images/twitter.png" alt="twitter">
+        </div>
+        </div>
+      </div>
+      <div class= "footer_content" id="second">
+        <h2>CONTACT US</h2>
+        <h4> <img class = "image" src="../images/phone.png" alt="phone"> 08165656988,08156453465</h4>
+        <h4> <img class = "image" src="../images/home_addrress.png" alt="address">h34, Ewet Housing
+            Estate,<br><pre>     Uyo, Akwa-Ibom Nigeria</pre></h4>
+        <h4> <img class = "image" src="../images/mail.png" alt="phone">olifedayo94@gmail.com</h4>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="../jquery-3.3.1.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="../jqeury.js"></script>
+</body>     
+</html>    

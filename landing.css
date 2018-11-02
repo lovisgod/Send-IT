@@ -1,0 +1,740 @@
+@media only screen and (max-width:100px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width:100%;
+    height: 100%;
+  }
+}
+
+body,html{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+
+.header_box{
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 60px;
+  background-color: blue;
+}
+.footer_box{
+  margin-top: 30px;
+  width:auto;
+  display: grid;
+  grid-gap:700px;
+  height: 250px;
+  grid-template-columns: 250px 400px;
+  background-color: #19214B;
+}
+.sendIT_logo{
+  width: auto;
+  height: inherit;
+  background-color: inherit;
+  float: left;
+  margin-left: 40px;
+
+}
+.sendIT_logo a{
+  color: #FFFFFF;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+.serviceArea{
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.services{
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  height: 350px;
+}
+
+.services p{
+  font-family: cursive;
+
+}
+
+.service_image{
+  width: 389px;
+  height: 200px;;
+}
+
+.services land ship air{
+  height: 250px;
+  width: auto;
+}
+
+
+.nav{
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  grid-gap: 20px;
+  justify-self: end;
+  margin-right: 60px;
+}
+
+.nav button{
+  font-size: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+
+}
+
+.nav h2{
+  font-size: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+
+}
+
+.nav_button a{
+  font-size: 20px;
+  font-weight: normal;
+  color:white;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+
+}
+.intro{
+  width: auto;
+  height: auto;
+}
+
+.dropdown-arrow{
+  width: 10px;
+}
+
+  #first{
+    padding: 20px;
+    padding-left: 30px;
+  }
+
+  #second{
+    padding: 20px;
+  }
+
+
+
+  .footer_content h2{
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+
+  .footer_content h4{
+    font-family: cursive;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+  }
+.ft_images{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  width: 20px;
+}
+ .image{
+   width: 25px;
+   height: 20px;
+   margin-right: 20px;
+}
+
+#afternav{
+  width: 100%;
+  height:auto;
+  
+}
+
+
+#send_it{
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+#it_color{
+  color: #E06262;
+}
+
+ .dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content2 {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 200px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+
+.dropdown-content1 a {
+    float: none;
+    color: blue;
+    padding: 12px 16px;
+    border-bottom:1px solid rgba(182,182,182,0.5) ;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+}
+
+.dropdown-content2 a {
+  float: none;
+  color: blue;
+  padding: 12px 16px;
+  border-bottom:1px solid rgba(182,182,182,0.5) ;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  
+}
+
+.container{
+  width: 450px;
+  margin: 30px auto;
+}
+.container a {
+  color:white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.signup,
+.login{
+  width: 50%;
+  background:#CBE173;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.signup-form{
+  background:blue;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 500px;
+  
+}
+.login-form{
+  background:blue;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 300px;
+  
+}
+
+.reset-form{
+  background:blue;
+  padding: 40px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px;
+  
+}
+.input{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+  transform: all 0.5s ease;
+}
+.input:focus{
+  border: 2px solid blue;
+}
+.btn{
+  width: 50%;
+  margin-left:25%; 
+  background:#E06262;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 2%;
+}
+
+.btn_admin{
+  width: 50%;
+  margin-left:25%; 
+  background:#E06262;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 2%;
+}
+.book-order{
+  display: grid;
+  background: #ffffff;
+  width: 1000px;
+  margin-left: 10%;
+  grid-template-columns: auto auto;
+  grid-gap: 250px;
+}
+.form-item{
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60px 60%;
+  grid-gap: 30px;
+
+}
+
+.input-delivery{
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+  border: 2px solid #e9eaea;
+  color: #3e3e40;
+  font-size: 14px;
+  outline: none;
+}
+.book_order_right,.book_order_left{
+  background:none;
+  padding: 10px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 500px;
+}
+.btn-deliver{
+  
+    width: 10%;
+    margin-left: 42%;
+    background: #E06262;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 90px;
+    border-radius: 2%;
+}
+.btn-deliver a{
+  
+    font-size: 10px;
+    font-weight: normal;
+    color:white;
+    font-family: cursive;
+    font-weight: bold;
+    border: none;
+    background-color: inherit;
+    text-decoration: none;
+  
+  
+}
+.desc{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 10%;
+}
+
+.second_header_box{
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 50px;
+  background-color: #E06262;
+}
+
+.second_header_box #delivery_man{
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+.delivery_manage{
+  width: auto;
+  height: inherit;
+  background-color: inherit;
+  float: left;
+  margin-left: 40px;
+
+}
+.second_nav{
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  grid-gap: 20px;
+  justify-self: end;
+  margin-right: 30px;
+}
+.pay_btn,.cancel_btn{
+  width: 60%;
+  margin-left:25%; 
+  background:none;
+  height: 40px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  
+}
+
+.cancel_btn button{
+  height: 30px;
+  background:#E06262;
+  
+}
+.pay_btn button{
+  height: 30px;
+  background: #E06262;
+
+}
+
+/*.book_order_right,.book_order_left{
+  background:none;
+  padding: 10px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 500px;
+}*/
+.payment_third{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.payment-form{
+  background:#D3D3D3;
+  padding: 40px;
+  clear: both;
+  width: 90%;
+  box-sizing: border-box;
+  height: 300px;
+  
+}
+
+.payment-form input{
+  width: 100%;
+padding: 5px;
+box-sizing: border-box;
+text-align: center;
+font-style: normal;
+font-weight: bold;
+margin-bottom: 5px;
+border: 2px solid #e9eaea;
+color: #3e3e40;
+font-size: 14px;
+outline: none;
+}
+.payment-container{
+  
+    width: 350px;
+    margin: 30px auto;
+
+}
+.order_container{
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  width: 700px;
+  margin: 25%;
+  margin-top:10px;
+  margin-bottom: 10px;
+  background:#D3D3D3;
+}
+.order_container h4{
+  color:#000000;
+  font-style: normal;
+  font-weight: normal;
+  font-family: cursive;
+}
+.order_details_left,.order_details_right{
+  padding: 30px;
+}
+.order_details_left{
+  margin-left:80px;
+}
+.order_details_left{
+  margin-left:20px;
+}
+.vertical_line{
+ height:500px;
+ width:1px; /* edit this if you want */
+ background-color:#000000;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+.change_destination,.cancel_the_order{
+  background:#E06262;
+  padding-left: 20px;
+  padding-right:0;
+  width: 220px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.history_in_landing_page{
+  cursor: pointer;
+}
+
+.book_order_change{
+  background:none;
+  padding: 10px;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  height: 400px;
+  margin-left: 200px;
+}
+#change-destination{
+  margin-left:30%;
+}
+.btn-changedestination{
+  width: 15%;
+  margin-left: 42%;
+  background: #E06262;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  border-radius: 2%;
+}
+
+.btn-changedestination a{
+  
+  font-size: 10px;
+  font-weight: normal;
+  color:white;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+}
+.user_details{
+  width: 400px;
+  height: 350px;
+  padding: 10px;
+  border: #3e3e40;
+  border-style: solid;
+  margin-left: 150px;
+
+}
+.user_image{
+  width: 200px;
+  align-items: center;
+  padding: 10px;
+  margin-left: 150px;
+}
+.user_image img{
+  margin-left:40px;
+}
+.user_image h4{
+  background: #E06262;
+}
+
+aside {
+  width: 300px;
+  height: 350px;
+  padding-bottom:0;
+  margin-left: 10px;
+  margin-right: 20px; 
+  float: right;
+  font-style: italic;
+  color: #29627e;
+  align-items:flex-start;
+  border: #3e3e40;
+  border-style: solid;
+  overflow-y:scroll; 
+}
+
+.card{
+  width: 70%;
+  padding: 10px;
+  height: 200px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border: #3e3e40;
+  border-style: dotted;
+  cursor: pointer;
+}
+
+
+.admin_card{
+  width: 70%;
+  padding: 10px;
+  height: 160px;
+  margin-left: 80px;
+  margin-bottom: 10px;
+  border: #3e3e40;
+  border-style: dotted;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+
+#order_admin_title{
+  margin-left: 500px;
+  font-family: cursive;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30px;
+}
+.customer_history{
+  background: blue;
+  width: 50%;
+  margin-left: 350px;
+  padding: 10px;
+  height:390px;
+  overflow-y: scroll;
+}
+.admin_card div{
+    margin-left: 110px;
+}
+#order_admin_title_detailed{
+  margin-left: 400px;
+  font-family: cursive;
+  color: #000000;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.order_container_1{
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  width: 700px;
+  height:500px;
+  margin: 25%;
+  margin-top:10px;
+  margin-bottom: 10px;
+  background:#D3D3D3;
+}
+
+.vertical_line_1{
+  height:300px;
+  width:1px; /* edit this if you want */
+  background-color:#000000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ }
+
+ .change_destination_1{
+  background:inherit;
+  padding-left: 20px;
+  padding-right:0;
+  width: 220px;
+  margin-bottom: 1px;
+  margin-top: 150px;
+  color:#E06262;
+}
+
+.cancel_the_order_1{
+  background:inherit;
+  padding-left: 20px;
+  padding-right:0;
+  width: 220px;
+  margin-bottom: 1px;
+  margin-top: 10px;
+  color: #E06262;
+}
+
+#status{
+  background:#ffffff;
+  padding-left: 20px;
+  padding-right:0;
+  width: 210px;
+  margin-bottom: 1px;
+  margin-top: 80px;
+}
+
+#location{
+  background:#ffffff;
+  padding-left: 20px;
+  padding-right:0;
+  width: 210px;
+  margin-bottom: 1px;
+  margin-top: 10px;
+}
+
+.btn_statuschange{
+  background:#E06262;
+  padding-left: 10px;
+  padding-right:0;
+  width: 70px;
+  margin-bottom: 1px;
+  margin-left: 260px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.btn_statuschange a{
+  
+  font-size: 30px;
+  font-weight: normal;
+  color:white;
+  font-family: cursive;
+  font-weight: bold;
+  border: none;
+  background-color: inherit;
+  text-decoration: none;
+
+
+}
