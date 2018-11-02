@@ -299,6 +299,22 @@ body,html{
   margin-bottom: 10px;
   border-radius: 2%;
 }
+
+.btn_admin{
+  width: 50%;
+  margin-left:25%; 
+  background:#E06262;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 2%;
+}
 .book-order{
   display: grid;
   background: #ffffff;

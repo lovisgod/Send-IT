@@ -30,13 +30,21 @@ $(".login").click(function(){
   });
 
   $(".cancel_the_order").click(function(){
-    window.location.replace("./landing.html");
+    window.location.replace("../index.html");
   });
 
   $(".card").click(function(){
     window.location.href="./order_details.html";
-  })
+  });
 
   $(".admin_card").click(function(){
     window.location.href="./admin_order_details.html";
-  })
+  });
+
+  $(".btn").click(function(){
+    window.location.href="./order_history.html";
+  });
+
+  $(".btn_admin").click(function(){
+    window.location.href="./admin_profile.html";
+  }); 
