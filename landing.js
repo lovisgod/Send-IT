@@ -42,9 +42,9 @@ window.onclick = function(e) {
   }
 
   function cancel_order(){
-      window.location.replace("./landing.html");
+      window.location.replace("../index.html");
   }
   function history(){
-      window.location.href="./order_history.html";
+      window.location.href="./UI/order_history.html";
   }
   
