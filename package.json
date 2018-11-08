@@ -1,5 +1,5 @@
 {
-  "name": "Send-IT",
+  "name": "send_it",
   "version": "1.0.0",
   "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
   "main": "jqeury.js",
