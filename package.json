@@ -1,0 +1,29 @@
+{
+  "name": "Send-IT",
+  "version": "1.0.0",
+  "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
+  "main": "jqeury.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovisgod/Send-IT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lovisgod/Send-IT/issues"
+  },
+  "homepage": "https://github.com/lovisgod/Send-IT#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "joi": "^14.0.4"
+  }
+}
