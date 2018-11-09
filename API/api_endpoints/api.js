@@ -31,4 +31,18 @@ app.post('/api/v1/users', (req, res) => {
   res.status(200).send(user);
 });
 
+app.post('/api/v1/parcels', (req, res) => {
+  const parcel = {
+    parcelid: parcels.length + 1,
+    name: req.body.name,
+    reciever: req.body.reciever,
+    to: req.body.to,
+    from: req.body.from,
+    userid: req.body.userid,
+    status: req.body.status,
+  };
+  parcels.push(parcel);
+  res.status(200).send(parcel);
+});
+
 module.exports = port;

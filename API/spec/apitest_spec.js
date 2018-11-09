@@ -12,7 +12,7 @@ describe('server', () => {
   describe('post/api/users', () => {
     const data = {};
     beforeAll((done) => {
-      request.post('http://localhost:8000/api/users', (error, res, body) => {
+      request.post('http://localhost:8000/api/v1/users', (error, res, body) => {
         data.status = res.statusCode;
         data.body = body;
         done();
@@ -20,6 +20,23 @@ describe('server', () => {
     });
     it('status 200', () => {
       expect(data.status).toBe(200);
+    });
+  });
+
+  describe('post/api/parcels', () => {
+    const data = {};
+    beforeAll((done) => {
+      request.post('http://localhost:8000/api/v1/parcels', (error, res, body) => {
+        data.status = res.statusCode;
+        data.body = body;
+        done();
+      });
+    });
+    it('status 200', () => {
+      expect(data.status).toBe(404);
+    });
+    it('message successful', () => {
+      expect(data.body).toEqual({});
     });
   });
 });
