@@ -4,7 +4,7 @@
   "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
   "main": "landing.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node spec"
+    "test": "./node_modules/.bin/jasmine-node ./API/spec"
   },
   "repository": {
     "type": "git",
