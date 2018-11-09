@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 const path = require('path');
 
-app.use(express.static('landing.css'));
+app.use(express.static(`${__dirname}/landing.css`));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/index.html`));
