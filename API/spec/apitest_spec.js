@@ -1,5 +1,6 @@
+
 /* eslint-disable global-require */
-/* eslint-disable no-undef */
+
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 const request = require('request');
@@ -12,7 +13,7 @@ describe('server', () => {
   describe('post/api/users', () => {
     const data = {};
     beforeAll((done) => {
-      request.post('http://localhost:8000/api/v1/users', (error, res, body) => {
+      request.post('http://localhost:8000/api/v1/users', (_error, res, body) => {
         data.status = res.statusCode;
         data.body = body;
         done();
