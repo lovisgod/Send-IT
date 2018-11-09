@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "joi": "^14.0.4"
+    "jasmine-node": "^1.16.2",
+    "joi": "^14.0.4",
+    "request": "^2.88.0"
   }
 }
