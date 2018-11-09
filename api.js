@@ -25,8 +25,8 @@ const users = [
 ];
 
 // eslint-disable-next-line prefer-destructuring
-const port = process.env.port;
-app.listen(port, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
   console.log('listening on port 8000....... please wait');
 });
 
@@ -106,4 +106,4 @@ app.put('/api/v1/parcels/:parcelid/cancel', (req, res) => {
   }
 });
 
-module.exports = port;
+module.exports = PORT;
