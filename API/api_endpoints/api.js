@@ -74,13 +74,27 @@ app.get('/api/v1/users/:userid/parcels', (req, res) => {
   const userParcels = getUserParcels(req.params.userid);
   const getuser = users.find(c => c.userid === req.params.userid);
   if (!getuser) {
-    res.status(400).send('the user with that id is not available');
+    res.status(404).send('the user with that id is not available');
   } else {
     res.status(200).send({
       // this send the user details as a json object
       user: getuser,
       parcels: userParcels,
     });
+  }
+});
+
+app.put('/api/v1/parcels/:parcelid/cancel', (req, res) => {
+  // eslint-disable-next-line radix
+  const parcelToCancel = parcels.find(c => c.parcelid === parseInt(req.params.parcelid));
+  if (!parcelToCancel) {
+    res.status(400).send('Nothing to cancel');
+  } else {
+    if (parcelToCancel.status !== 'delivered') {
+      parcelToCancel.status = 'cancelled';
+      res.status(200).send('you have successfully cancelled the delivery order');
+    }
+    res.send({ status: 'You cant cancel an already delivered order!!!' });
   }
 });
 
