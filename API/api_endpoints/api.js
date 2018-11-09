@@ -49,4 +49,15 @@ app.get('/api/v1/parcels', (req, res) => {
   res.status(200).send(parcels);
 });
 
+app.get('/api/v1/parcels/:parcelid', (req, res) => {
+  // eslint-disable-next-line radix
+  const getparcels = parcels.find(c => c.parcelid === parseInt(req.params.parcelid));
+
+  if (!getparcels) {
+    res.status(400).send('the parcel with the giving id is not available');
+  } else {
+    res.status(200).send(getparcels);
+  }
+});
+
 module.exports = port;
