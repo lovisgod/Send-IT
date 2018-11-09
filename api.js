@@ -5,6 +5,13 @@ const express = require('express');
 
 const app = express();
 app.use(express.json());
+const path = require('path');
+
+app.use(express.static('landing.css'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/index.html`));
+});
 
 // create a non persistence database for parcels
 
