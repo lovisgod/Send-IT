@@ -22,6 +22,16 @@ app.listen(port, () => {
   console.log('listening on port 8000....... please wait');
 });
 
+const getUserParcels = (userId) => {
+  // eslint-disable-next-line no-use-before-define
+  const getid = parcels.find(c => c.userid === userId);
+  console.log(getid);
+  if (!getid) {
+    return 'no parcels for user';
+  }
+  return getid;
+};
+
 app.post('/api/v1/users', (req, res) => {
   const user = {
     userid: req.body.userid,
@@ -57,6 +67,20 @@ app.get('/api/v1/parcels/:parcelid', (req, res) => {
     res.status(400).send('the parcel with the giving id is not available');
   } else {
     res.status(200).send(getparcels);
+  }
+});
+
+app.get('/api/v1/users/:userid/parcels', (req, res) => {
+  const userParcels = getUserParcels(req.params.userid);
+  const getuser = users.find(c => c.userid === req.params.userid);
+  if (!getuser) {
+    res.status(400).send('the user with that id is not available');
+  } else {
+    res.status(200).send({
+      // this send the user details as a json object
+      user: getuser,
+      parcels: userParcels,
+    });
   }
 });
 
