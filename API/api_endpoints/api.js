@@ -45,4 +45,8 @@ app.post('/api/v1/parcels', (req, res) => {
   res.status(200).send(parcel);
 });
 
+app.get('/api/v1/parcels', (req, res) => {
+  res.status(200).send(parcels);
+});
+
 module.exports = port;

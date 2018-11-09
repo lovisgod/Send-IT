@@ -33,10 +33,27 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      expect(data.status).toBe(404);
+      expect(data.status).toBe(200);
     });
     it('message successful', () => {
       expect(data.body).toEqual({});
+    });
+  });
+
+  describe('get/api/parcels', () => {
+    const data = {};
+    beforeAll((done) => {
+      request.get('http://localhost:8000/api/v1/parcels', (error, res, body) => {
+        data.status = res.statusCode;
+        data.body = body;
+        done();
+      });
+    });
+    it('status 200', () => {
+      expect(data.status).toBe(404);
+    });
+    it('message successful', () => {
+      expect(data.body).toEqual([{}]);
     });
   });
 });
