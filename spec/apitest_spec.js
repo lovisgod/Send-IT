@@ -6,7 +6,7 @@ const request = require('request');
 
 describe('server', () => {
   beforeAll(() => {
-    const server = require('./../../api');
+    const server = require('./../api');
   });
 
   describe('post/api/users', () => {
