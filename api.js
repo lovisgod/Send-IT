@@ -24,7 +24,8 @@ const users = [
 
 ];
 
-const port = process.env.port || 8000;
+// eslint-disable-next-line prefer-destructuring
+const port = process.env.port;
 app.listen(port, () => {
   console.log('listening on port 8000....... please wait');
 });
