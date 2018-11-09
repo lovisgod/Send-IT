@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 /* eslint-disable no-unused-vars */
 
 
@@ -18,5 +16,19 @@ const parcels = [
 const users = [
 
 ];
+
+const port = process.env.port || 8000;
+app.listen(port, () => {
+  console.log('listening on port 8000....... please wait');
+});
+
+app.post('/api/v1/users', (req, res) => {
+  const user = {
+    userid: req.body.userid,
+    name: req.body.name,
+  };
+  users.push(user);
+  res.status(200).send(user);
+});
 
 module.exports = port;

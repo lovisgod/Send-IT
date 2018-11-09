@@ -8,4 +8,18 @@ describe('server', () => {
   beforeAll(() => {
     const server = require('./../api_endpoints/api.js');
   });
+
+  describe('post/api/users', () => {
+    const data = {};
+    beforeAll((done) => {
+      request.post('http://localhost:8000/api/users', (error, res, body) => {
+        data.status = res.statusCode;
+        data.body = body;
+        done();
+      });
+    });
+    it('status 200', () => {
+      expect(data.status).toBe(200);
+    });
+  });
 });
