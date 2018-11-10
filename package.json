@@ -5,7 +5,7 @@
   "main": "api.js",
   "scripts": {
     "start": "node api.js",
-    "test": "jasmine-node ./API/spec"
+    "test": "jasmine-node ./spec"
   },
   "repository": {
     "type": "git",

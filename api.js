@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 const path = require('path');
 
-app.use(express.static(`${__dirname}/landing.css`));
+app.use('/static', express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(`${__dirname}/index.html`));
@@ -27,7 +27,7 @@ const users = [
 // eslint-disable-next-line prefer-destructuring
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log('listening on port 8000....... please wait');
+  console.log('listening on port 5000....... please wait');
 });
 
 const getUserParcels = (userId) => {
