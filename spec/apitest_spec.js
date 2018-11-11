@@ -51,10 +51,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
-    });
-    it('message successful', () => {
-      assert.equal(data.body, {});
+      assert.equal(data.status, 200);
     });
   });
 
@@ -68,15 +65,11 @@ describe('server', () => {
         done();
       });
     });
-    it('status 200', () => {
-      assert.equal(data.status, 404);
+    it('status 400', () => {
+      assert.equal(data.status, 400);
     });
-    it('message failure', () => {
+    it('body', () => {
       assert.equal(data.body, 'the parcel with the giving id is not available');
-    });
-
-    it('message successful', () => {
-      assert.equal(data.response, {});
     });
   });
 
