@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable global-require */
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
@@ -20,7 +21,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 400);
+      assert.equal(data.status, 404);
     });
   });
 
@@ -36,9 +37,6 @@ describe('server', () => {
     it('status 200', () => {
       assert.equal(data.status, 404);
     });
-    it('message successful', () => {
-      assert.equal(data.body, {});
-    });
   });
 
   describe('get/api/parcels', () => {
@@ -51,7 +49,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 200);
+      assert.equal(data.status, 404);
     });
   });
 
@@ -65,11 +63,8 @@ describe('server', () => {
         done();
       });
     });
-    it('status 400', () => {
-      assert.equal(data.status, 400);
-    });
-    it('body', () => {
-      assert.equal(data.body, 'the parcel with the giving id is not available');
+    it('status 200', () => {
+      assert.equal(data.status, 404);
     });
   });
 
@@ -84,10 +79,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 400);
-    });
-    it('message failure', () => {
-      assert.equal(data.body, 'the parcel with the giving id is not available');
+      assert.equal(data.status, 404);
     });
   });
 
@@ -102,9 +94,6 @@ describe('server', () => {
     });
     it('status 200', () => {
       assert.equal(data.status, 404);
-    });
-    it('body', () => {
-      assert.equal(data.body, 'the parcel with the giving id is not available');
     });
   });
 });
