@@ -21,7 +21,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 200);
     });
   });
 
@@ -35,7 +35,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 200);
     });
   });
 
@@ -49,7 +49,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 200);
     });
   });
 
@@ -64,7 +64,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 400);
     });
   });
 
@@ -93,7 +93,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 400);
     });
   });
 });

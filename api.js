@@ -25,9 +25,9 @@ const users = [
 ];
 
 // eslint-disable-next-line prefer-destructuring
-const PORT = process.env.port || 5000;
+const PORT = process.env.port || 8000;
 app.listen(PORT, () => {
-  console.log('listening on port 5000....... please wait');
+  console.log('listening on port 8000....... please wait');
 });
 
 const getUserParcels = (userId) => {
