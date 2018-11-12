@@ -8,3 +8,7 @@ node_js:
   
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+ deploy:
+    provider: heroku
+    api_key:
+     secure: "ae835325-02ed-4aa7-a21d-01766ef5437c"
