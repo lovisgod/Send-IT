@@ -2,11 +2,11 @@
   "name": "send_it",
   "version": "1.0.0",
   "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
-  "main": "api.js",
+  "main": "/lib/api.js",
   "scripts": {
-    "start": "node api.js",
-    "test": "mocha ./spec/test.js --exit",
-    "build":"npm test"
+    "build": "babel lib -d dist",
+    "start": "npm run build && nodemon dist/api.js",
+    "test": "npm run build && mocha  dist/test.js --exit"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/lovisgod/Send-IT#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
@@ -30,6 +32,6 @@
     "jasmine-node": "^1.16.2",
     "joi": "^14.0.4",
     "request": "^2.88.0",
-    "mocha":"^5.2.0"
+    "mocha": "^5.2.0"
   }
 }
