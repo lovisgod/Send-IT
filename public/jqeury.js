@@ -1,50 +1,51 @@
-$(".signup-form").hide();
-$(".signup").css("background", "grey");
-$(".reset-form").hide();
+$('.signup-form').hide();
+$('.signup').css('background', 'grey');
+$('.reset-form').hide();
 
-$(".login").click(function(){
-    $(".signup-form").hide();
-    $(".login-form").show();
-    $(".signup").css("background", "grey");
-    $(".login").css("background", "#CBE173");
-  });
-  
-  
-  $(".signup").click(function(){
-    $(".signup-form").show();
-    $(".login-form").hide();
-    $(".login").css("background", "grey");
-    $(".signup").css("background", "#CBE173");
-  });
+$('.login').click(() => {
+  $('.signup-form').hide();
+  $('.login-form').show();
+  $('.signup').css('background', 'grey');
+  $('.login').css('background', '#CBE173');
+});
 
-  $("#reset-button").click(function(){
-      $(".signup-form").hide();
-      $(".login-form").hide();
-      $(".reset-form").show();
-      $(".login").hide();
-      $(".signup").hide();
-  })
 
-  $(".change_destination").click(function(){
-    window.location.href="./change_destination.html";
-  });
+$('.signup').click(() => {
+  $('.signup-form').show();
+  $('.login-form').hide();
+  $('.login').css('background', 'grey');
+  $('.signup').css('background', '#CBE173');
+});
 
-  $(".cancel_the_order").click(function(){
-    window.location.replace("../index.html");
-  });
+$('#reset-button').click(() => {
+  $('.signup-form').hide();
+  $('.login-form').hide();
+  $('.reset-form').show();
+  $('.login').hide();
+  $('.signup').hide();
+});
 
-  $(".card").click(function(){
-    window.location.href="./order_details.html";
-  });
+$('.change_destination').click(() => {
+  // eslint-disable-next-line no-undef
+  window.location.href = './change_destination.html';
+});
 
-  $(".admin_card").click(function(){
-    window.location.href="./admin_order_details.html";
-  });
+$('.cancel_the_order').click(() => {
+  window.location.replace('../index.html');
+});
 
-  $(".btn").click(function(){
-    window.location.href="./order_history.html";
-  });
+$('.card').click(() => {
+  window.location.href = './order_details.html';
+});
 
-  $(".btn_admin").click(function(){
-    window.location.href="./admin_profile.html";
-  }); 
+$('.admin_card').click(() => {
+  window.location.href = './admin_order_details.html';
+});
+
+$('.btn').click(() => {
+  window.location.href = './order_history.html';
+});
+
+$('.btn_admin').click(() => {
+  window.location.href = './admin_profile.html';
+});
