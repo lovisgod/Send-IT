@@ -10,12 +10,12 @@
     position: absolute;
     display: block;
     top: 25%;
-    width: 40%;
+    width: 60%;
     font-size: 50PX;
     animation-duration: 20s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    background-color: darkgray;
+    background-color: none;
   }
   
   .item-1{

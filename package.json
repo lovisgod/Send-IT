@@ -4,8 +4,9 @@
   "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
   "main": "/lib/api.js",
   "scripts": {
-    "build": "babel lib -d dist",
-    "start": "npm run build && nodemon dist/api.js",
+    "build": "babel API -d dist",
+    "start": "npm run build && node dist/api.js",
+    "dev": "npm run build && nodemon dist/api.js",
     "test": "npm run build && mocha  dist/test.js --exit"
   },
   "repository": {

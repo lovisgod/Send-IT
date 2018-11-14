@@ -1,4 +1,4 @@
-import express, {} from 'express';
+import express from 'express';
 import { join } from 'path';
 
 const app = express();
@@ -7,7 +7,7 @@ app.use(express.json());
 app.use('/static', express.static('public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(join(`${__dirname}/index.html`));
+  res.sendFile(join(`${__dirname}/../index.html`));
 });
 
 // create a non persistence database for parcels
@@ -22,7 +22,7 @@ const users = [
 ];
 
 // eslint-disable-next-line prefer-destructuring
-const PORT = process.env.port || 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log('listening on port 8000....... please wait');
 });
@@ -102,5 +102,3 @@ app.put('/api/v1/parcels/:parcelid/cancel', (req, res) => {
     res.send({ status: 'You cant cancel an already delivered order!!!' });
   }
 });
-
-export default PORT;

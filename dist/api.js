@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -18,7 +14,7 @@ app.use(_express2.default.json());
 app.use('/static', _express2.default.static('public'));
 
 app.get('/', function (req, res) {
-  res.sendFile((0, _path.join)(__dirname + '/index.html'));
+  res.sendFile((0, _path.join)(__dirname + '/../index.html'));
 });
 
 // create a non persistence database for parcels
@@ -29,7 +25,7 @@ var parcels = [];
 var users = [];
 
 // eslint-disable-next-line prefer-destructuring
-var PORT = process.env.port || 8000;
+var PORT = process.env.PORT || 8000;
 app.listen(PORT, function () {
   console.log('listening on port 8000....... please wait');
 });
@@ -117,5 +113,3 @@ app.put('/api/v1/parcels/:parcelid/cancel', function (req, res) {
     res.send({ status: 'You cant cancel an already delivered order!!!' });
   }
 });
-
-exports.default = PORT;

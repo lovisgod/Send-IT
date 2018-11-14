@@ -38,7 +38,13 @@ $('.card').click(() => {
   window.location.href = './order_details.html';
 });
 
-$('.admin_card').click(() => {
+$('.admin_card1').click(() => {
+  window.location.href = './admin_order_details.html';
+});
+$('.admin_card2').click(() => {
+  window.location.href = './admin_order_details.html';
+});
+$('.admin_card3').click(() => {
   window.location.href = './admin_order_details.html';
 });
 
