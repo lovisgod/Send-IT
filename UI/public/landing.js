@@ -44,7 +44,4 @@ window.onclick = function(e) {
   function cancel_order(){
       window.location.replace("../index.html");
   }
-  function history(){
-      window.location.href="./UI/order_history.html";
-  }
   

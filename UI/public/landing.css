@@ -1,14 +1,15 @@
 @media only screen and (max-width:100px) {
   /* For mobile phones: */
   .menu, .main, .right {
-    width:100%;
+    width:auto;
     height: 100%;
   }
 }
 
 body,html{
+  width: auto;
   margin: 0;
-  overflow-x: hidden;
+  background: #D3D3D3;
 }
 
 
@@ -17,16 +18,7 @@ body,html{
   display: grid;
   grid-template-columns: auto auto;
   height: 60px;
-  background-color: blue;
-}
-.footer_box{
-  margin-top: 30px;
-  width:auto;
-  display: grid;
-  grid-gap:700px;
-  height: 250px;
-  grid-template-columns: 250px 400px;
-  background-color: #19214B;
+  background-image: linear-gradient(#0f0c29, #302b63, #24243e);
 }
 .sendIT_logo{
   width: auto;
@@ -43,35 +35,6 @@ body,html{
   text-decoration: none;
 }
 
-.serviceArea{
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-.services{
-  padding: 0;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  width: 100%;
-  height: 350px;
-}
-
-.services p{
-  font-family: cursive;
-
-}
-
-.service_image{
-  width: 389px;
-  height: 200px;;
-}
-
-.services land ship air{
-  height: 250px;
-  width: auto;
-}
-
-
 .nav{
   padding: 0;
   display: grid;
@@ -79,7 +42,7 @@ body,html{
   align-items: center;
   grid-gap: 20px;
   justify-self: end;
-  margin-right: 60px;
+  margin-right: 40px;
 }
 
 .nav button{
@@ -115,55 +78,105 @@ body,html{
   text-decoration: none;
 
 }
+.footer_box{
+  margin-top: 30px;
+  width:auto;
+  /*display: grid;*/
+ /* grid-gap:760px;*/
+  height: 250px;
+  /*grid-template-columns: auto auto;*/
+  display: flex;
+  
+  background-image: linear-gradient(#0f0c29, #302b63, #24243e);
+}
+#first{
+  position: absolute;
+  left: 3%;
+  padding: 20px;
+ /* padding-left: 30px;*/
+}
+
+#second{
+  padding: 20px;
+  position: absolute;
+  right: 4%;
+}
+
+
+
+.footer_content h2{
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.footer_content h4{
+  font-family: cursive;
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.ft_images{
+display: grid;
+grid-template-columns: auto auto auto;
+grid-gap: 10px;
+width: 20px;
+
+}
+.image{
+ width: 25px;
+ height: 20px;
+ margin-right: 20px;
+}
+
+
+.serviceArea{
+ margin-bottom: 7%;
+ margin-left: 4%;
+ height: 100;
+ width: auto;
+ display: flex;
+ flex-direction:column;
+}
+
+.services{
+  padding: 0;
+  display: flex;
+  /*grid-template-columns: auto auto auto;*/
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+.services p{
+  font-family: cursive;
+  width: 389px;
+}
+
+.service_image{
+  width: 389px;
+  height: 200px;
+}
+
+#land, #ship, #air{
+  height: 250px;
+  position: relative;
+  width: auto;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+
+
 .intro{
   width: auto;
-  height: auto;
+  height: 600px;
+  background-image: url(./images/background.jpg);
 }
 
 .dropdown-arrow{
   width: 10px;
-}
-
-  #first{
-    padding: 20px;
-    padding-left: 30px;
-  }
-
-  #second{
-    padding: 20px;
-  }
-
-
-
-  .footer_content h2{
-    font-family: cursive;
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFFFFF;
-  }
-
-  .footer_content h4{
-    font-family: cursive;
-    font-size: 15px;
-    font-weight: bold;
-    color: #FFFFFF;
-  }
-.ft_images{
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  width: 20px;
-}
- .image{
-   width: 25px;
-   height: 20px;
-   margin-right: 20px;
-}
-
-#afternav{
-  width: 100%;
-  height:auto;
-  
 }
 
 
@@ -220,7 +233,12 @@ body,html{
 
 .container{
   width: 450px;
+  background-color:inherit;
+  height: auto;
   margin: 30px auto;
+  border-style: outset;
+  border-radius: 5px;
+  border-color: grey;
 }
 .container a {
   color:white;
@@ -239,16 +257,16 @@ body,html{
   text-transform: uppercase;
 }
 .signup-form{
-  background:blue;
+  background:none;
   padding: 40px;
   clear: both;
   width: 100%;
   box-sizing: border-box;
-  height: 500px;
+  height: 400px;
   
 }
 .login-form{
-  background:blue;
+  background:none;
   padding: 40px;
   clear: both;
   width: 100%;
@@ -258,12 +276,12 @@ body,html{
 }
 
 .reset-form{
-  background:blue;
+  background:inherit;
   padding: 40px;
   clear: both;
   width: 100%;
   box-sizing: border-box;
-  height: 400px;
+  height: 350px;
   
 }
 .input{
@@ -280,6 +298,7 @@ body,html{
   font-size: 14px;
   outline: none;
   transform: all 0.5s ease;
+  border-radius: 10px;
 }
 .input:focus{
   border: 2px solid blue;
@@ -288,16 +307,16 @@ body,html{
   width: 50%;
   margin-left:25%; 
   background:#E06262;
-  height: 60px;
+  height: auto;
   text-align: center;
-  line-height: 60px;
+  line-height: 30px;
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
   letter-spacing: 1px;
   cursor: pointer;
   margin-bottom: 10px;
-  border-radius: 2%;
+  border-radius:10px;
 }
 
 .btn_admin{
@@ -315,27 +334,24 @@ body,html{
   margin-bottom: 10px;
   border-radius: 2%;
 }
-.book-order{
-  display: grid;
+/*.book-order{
+  display: flex;
   background: #ffffff;
-  width: 1000px;
-  margin-left: 10%;
-  grid-template-columns: auto auto;
-  grid-gap: 250px;
-}
+  max-width: 70%;
+  margin-left: 32%;
+}*/
 .form-item{
   padding: 0;
   width: 100%;
   display: grid;
-  grid-template-columns: 60px 60%;
-  grid-gap: 30px;
+  grid-template-columns: 15% 70%;
 
 }
 
 .input-delivery{
   width: 100%;
   padding: 5px;
-  box-sizing: border-box;
+  box-sizing: border-box;display: flex;
   text-align: center;
   font-style: normal;
   font-weight: bold;
@@ -346,20 +362,22 @@ body,html{
   font-size: 14px;
   outline: none;
 }
-.book_order_right,.book_order_left{
+.book_order{
   background:none;
   padding: 10px;
   clear: both;
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
-  height: 500px;
+  height: 560px;
+  margin-left: 18%;
+
 }
 .btn-deliver{
   
     width: 10%;
-    margin-left: 42%;
+    margin-left: 50%;
     background: #E06262;
-    height: 60px;
+    height: 10%;
     text-align: center;
     line-height: 60px;
     text-transform: uppercase;
@@ -367,8 +385,9 @@ body,html{
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
-    margin-bottom: 90px;
-    border-radius: 2%;
+    margin-bottom: 60px;
+    margin-top: 0.5%;
+    border-radius: 5%;
 }
 .btn-deliver a{
   
@@ -384,9 +403,8 @@ body,html{
   
 }
 .desc{
-  display: grid;
-  grid-template-columns: auto auto;
-  margin-left: 10%;
+  margin-left: 45%;
+  max-width: 500px;
 }
 
 .second_header_box{
@@ -535,17 +553,17 @@ outline: none;
   background:none;
   padding: 10px;
   clear: both;
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
-  height: 400px;
-  margin-left: 200px;
+  height: 470px;
+  margin-left: 300px;
 }
 #change-destination{
-  margin-left:30%;
+  margin-left:45%;
 }
 .btn-changedestination{
   width: 15%;
-  margin-left: 42%;
+  margin-left: 50%;
   background: #E06262;
   height: 60px;
   text-align: center;
@@ -556,7 +574,7 @@ outline: none;
   letter-spacing: 1px;
   cursor: pointer;
   margin-bottom: 40px;
-  border-radius: 2%;
+  border-radius: 7%;
 }
 
 .btn-changedestination a{
@@ -570,81 +588,118 @@ outline: none;
   background-color: inherit;
   text-decoration: none;
 }
+
+.userprofile{
+  width: auto;
+  height: auto;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+}
 .user_details{
-  width: 400px;
+  width: 300px;
   height: 350px;
   padding: 10px;
   border: #3e3e40;
   border-style: solid;
-  margin-left: 150px;
+}
 
+.user_data{
+  width: 30%;
+  margin-top: 30px;
 }
-.user_image{
-  width: 200px;
-  align-items: center;
-  padding: 10px;
-  margin-left: 150px;
+.user_data img{
+  margin-left:30%;
+  border-radius: 10px;
+  border-style: solid;
 }
-.user_image img{
-  margin-left:40px;
-}
-.user_image h4{
+.user_data h6{
   background: #E06262;
+  width: 90px;
+  margin-left: 30%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-radius: 5px;
+  
 }
 
-aside {
-  width: 300px;
-  height: 350px;
+.order_history_aside {
+  width: 65%;
+  height: auto;
   padding-bottom:0;
   margin-left: 10px;
-  margin-right: 20px; 
+  margin-right: 1%; 
+  margin-top: 10%;
   float: right;
   font-style: italic;
   color: #29627e;
-  align-items:flex-start;
+  align-items:flex-start; 
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.card1{
+  padding: 10px;
+  height: 170px;
+  margin-bottom: 10px;
   border: #3e3e40;
   border-style: solid;
-  overflow-y:scroll; 
+  cursor: pointer;
+  background-color:white;
+  text-align: center;
+  
 }
-
-.card{
-  width: 70%;
+.card2{
   padding: 10px;
-  height: 200px;
-  margin-left: 40px;
+  height: 170px;
   margin-bottom: 10px;
   border: #3e3e40;
-  border-style: dotted;
+  border-style: solid;
   cursor: pointer;
+  background-color:inherit;
+  text-align: center;
+  
+}
+.card3{
+  padding:10px;
+  height:170px;
+  margin-bottom: 10px;
+  border:#3e3e40;
+  border-style:solid;
+  cursor:pointer;
+  background-color:white;
+  text-align:center;
 }
 
-
-.admin_card{
-  width: 70%;
+.admin_card1, .admin_card2, .admin_card3{
   padding: 10px;
-  height: 160px;
-  margin-left: 80px;
+  height: 170px;
   margin-bottom: 10px;
   border: #3e3e40;
-  border-style: dotted;
+  border-style: solid;
   cursor: pointer;
-  background: #FFFFFF;
+  background-color:white;
+  text-align: center;
 }
 
 #order_admin_title{
-  margin-left: 500px;
+  margin-left: 30%;
   font-family: cursive;
   color: #000000;
   font-weight: bold;
   font-size: 30px;
 }
 .customer_history{
-  background: blue;
-  width: 50%;
-  margin-left: 350px;
+  background:inherit;
+  width: 80%;
+  margin-left:10%;
+  margin-right: 10%;
   padding: 10px;
   height:390px;
-  overflow-y: scroll;
 }
 .admin_card div{
     margin-left: 110px;
@@ -718,16 +773,18 @@ aside {
   background:#E06262;
   padding-left: 10px;
   padding-right:0;
-  width: 70px;
+  width: 75px;
+  height: auto;
   margin-bottom: 1px;
   margin-left: 260px;
   margin-top: 10px;
   color: #ffffff;
+  border-radius: 10px;
 }
 
 .btn_statuschange a{
   
-  font-size: 30px;
+  font-size: 20px;
   font-weight: normal;
   color:white;
   font-family: cursive;
