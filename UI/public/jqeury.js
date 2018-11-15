@@ -34,7 +34,13 @@ $('.cancel_the_order').click(() => {
   window.location.replace('../index.html');
 });
 
-$('.card').click(() => {
+$('.card1').click(() => {
+  window.location.href = './order_details.html';
+});
+$('.card2').click(() => {
+  window.location.href = './order_details.html';
+});
+$('.card3').click(() => {
   window.location.href = './order_details.html';
 });
 
