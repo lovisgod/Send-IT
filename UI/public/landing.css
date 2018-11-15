@@ -1,15 +1,8 @@
-@media only screen and (max-width:100px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:auto;
-    height: 100%;
-  }
-}
-
 body,html{
   width: auto;
   margin: 0;
   background: #D3D3D3;
+  overflow-x: hidden;
 }
 
 
@@ -132,21 +125,19 @@ width: 20px;
 
 
 .serviceArea{
- margin-bottom: 7%;
- margin-left: 4%;
- height: 100;
- width: auto;
- display: flex;
- flex-direction:column;
+height: 450px;
+padding: 15px;
 }
 
 .services{
-  padding: 0;
   display: flex;
-  /*grid-template-columns: auto auto auto;*/
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#ourservices{
+  margin-left:20px;
 }
 
 .services p{
@@ -161,18 +152,16 @@ width: 20px;
 
 #land, #ship, #air{
   height: 250px;
-  position: relative;
   width: auto;
-  margin-left: 4%;
-  margin-right: 4%;
 }
 
 
 
 .intro{
   width: auto;
-  height: 600px;
+  height: 570px;
   background-image: url(./images/background.jpg);
+  text-align: center;
 }
 
 .dropdown-arrow{
@@ -590,30 +579,40 @@ outline: none;
 }
 
 .userprofile{
-  width: auto;
+  width: 90%;
   height: auto;
   background: none;
   display: flex;
   justify-content: space-between;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 auto;
 }
 .user_details{
   width: 300px;
   height: 350px;
   padding: 10px;
-  border: #3e3e40;
-  border-style: solid;
+}
+
+#indent{
+  margin-left: 10px;
 }
 
 .user_data{
-  width: 30%;
-  margin-top: 30px;
+  width: 25%;
+  margin-top: 60px;
+  border:#3e3e40;
+  border-style: solid;
+  max-height: 500px;
+  justify-content: center;
+  text-align:left;
 }
 .user_data img{
-  margin-left:30%;
+  margin-left:35%;
   border-radius: 10px;
   border-style: solid;
+  margin-top: 3%;
+}
+#changephoto{
+  margin-left: 35%
 }
 .user_data h6{
   background: #E06262;
@@ -630,10 +629,7 @@ outline: none;
 .order_history_aside {
   width: 65%;
   height: auto;
-  padding-bottom:0;
-  margin-left: 10px;
-  margin-right: 1%; 
-  margin-top: 10%;
+  margin-top: 50px;
   float: right;
   font-style: italic;
   color: #29627e;
@@ -675,7 +671,7 @@ outline: none;
   text-align:center;
 }
 
-.admin_card1, .admin_card2, .admin_card3{
+.admin_card1{
   padding: 10px;
   height: 170px;
   margin-bottom: 10px;
@@ -683,6 +679,16 @@ outline: none;
   border-style: solid;
   cursor: pointer;
   background-color:white;
+  text-align: center;
+}
+ .admin_card2{
+  padding: 10px;
+  height: 170px;
+  margin-bottom: 10px;
+  border: #3e3e40;
+  border-style: solid;
+  cursor: pointer;
+  background-color:inherit;
   text-align: center;
 }
 

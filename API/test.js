@@ -3,10 +3,10 @@
 /* eslint-disable no-unused-vars */
 
 import { post, get, put } from 'request';
-import 'chai';
-import { equal, deepEqual } from 'assert';
+import { assert, should } from 'chai';
+// import { equal, deepEqual } from 'assert';
 import './api';
-import { isArray } from 'util';
+import { isArray, isObject } from 'util';
 import { type } from 'os';
 
 
@@ -16,24 +16,21 @@ const expect = newLocal;
 const should = require('chai').should(); */
 
 describe('server', () => {
-  before(() => {
-    // const server = require('./../lib/api').default.default;
-  });
-
   describe('post/api/users', () => {
     const data = {};
     before((done) => {
       post('http://localhost:8000/api/v1/users', (error, res, body) => {
         data.status = res.statusCode;
-        data.body = body;
+        data.body = res.body;
         done();
       });
     });
     it('status 200', () => {
-      equal(data.status, 200);
+      assert.equal(data.status, 200);
     });
-    it('added user', () => {
-      isArray(data.body, {});
+    it('added user it should return type of object', () => {
+      // isArray(data.body, {});
+      assert.equal(data.body, '{}');
     });
   });
 
@@ -47,10 +44,10 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      equal(data.status, 200);
+      assert.equal(data.status, 200);
     });
     it('status 200', () => {
-      isArray(data.body, {});
+      data.body.should.be('{}');
     });
   });
 
@@ -64,7 +61,7 @@ describe('server', () => {
       });
     });
     it('status 200', () => {
-      equal(data.status, 200);
+      assert.equal(data.status, 200);
     });
     it('parcel gotten', () => {
       isArray(data.body, []);
@@ -81,10 +78,10 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      equal(data.status, 400);
+      assert.equal(data.status, 400);
     });
     it('user parcel gotten', () => {
-      equal(data.body, 'the parcel with the giving id is not available');
+      assert.equal(data.body, 'the parcel with the giving id is not available');
     });
   });
 
@@ -98,11 +95,11 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      equal(data.status, 404);
+      assert.equal(data.status, 404);
     });
     it('user parcels gotten', () => {
       if (data.status === 404) {
-        equal(data.body, 'the user with that id is not available');
+        assert.equal(data.body, 'the user with that id is not available');
       } else {
         isArray(data.body, {});
       }
@@ -119,11 +116,11 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      equal(data.status, 400);
+      assert.equal(data.status, 400);
     });
     it('specific parcel gotten', () => {
       if (data.status === 400) {
-        equal(data.body, 'Nothing to cancel');
+        assert.equal(data.body, 'Nothing to cancel');
       } else {
         isArray(data.body, {});
       }
