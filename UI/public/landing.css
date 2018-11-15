@@ -1,11 +1,3 @@
-@media only screen and (max-width:100px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width:auto;
-    height: 100%;
-  }
-}
-
 body,html{
   width: auto;
   margin: 0;
@@ -133,21 +125,19 @@ width: 20px;
 
 
 .serviceArea{
- margin-bottom: 8%;
- margin-left: 4%;
- height: 100;
- width: auto;
- display: flex;
- flex-direction:column;
+height: 450px;
+padding: 15px;
 }
 
 .services{
-  padding: 0;
   display: flex;
-  /*grid-template-columns: auto auto auto;*/
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#ourservices{
+  margin-left:20px;
 }
 
 .services p{
@@ -162,10 +152,7 @@ width: 20px;
 
 #land, #ship, #air{
   height: 250px;
-  position: relative;
   width: auto;
-  margin-left: 4%;
-  margin-right: 4%;
 }
 
 
@@ -174,6 +161,7 @@ width: 20px;
   width: auto;
   height: 570px;
   background-image: url(./images/background.jpg);
+  text-align: center;
 }
 
 .dropdown-arrow{
@@ -591,13 +579,12 @@ outline: none;
 }
 
 .userprofile{
-  width: auto;
+  width: 90%;
   height: auto;
   background: none;
   display: flex;
   justify-content: space-between;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 auto;
 }
 .user_details{
   width: 300px;
@@ -605,17 +592,21 @@ outline: none;
   padding: 10px;
 }
 
+#indent{
+  margin-left: 10px;
+}
+
 .user_data{
   width: 25%;
-  margin-top: 15%;
+  margin-top: 60px;
   border:#3e3e40;
   border-style: solid;
-  max-height: fit-content;
+  max-height: 500px;
   justify-content: center;
-  text-align: center;
+  text-align:left;
 }
 .user_data img{
-  margin-left:1px;
+  margin-left:35%;
   border-radius: 10px;
   border-style: solid;
   margin-top: 3%;
@@ -638,10 +629,7 @@ outline: none;
 .order_history_aside {
   width: 65%;
   height: auto;
-  padding-bottom:0;
-  margin-left: 10px;
-  margin-right: 1%; 
-  margin-top: 10%;
+  margin-top: 50px;
   float: right;
   font-style: italic;
   color: #29627e;
