@@ -10,6 +10,7 @@ body,html{
   width: auto;
   margin: 0;
   background: #D3D3D3;
+  overflow-x: hidden;
 }
 
 
@@ -132,7 +133,7 @@ width: 20px;
 
 
 .serviceArea{
- margin-bottom: 7%;
+ margin-bottom: 8%;
  margin-left: 4%;
  height: 100;
  width: auto;
@@ -171,7 +172,7 @@ width: 20px;
 
 .intro{
   width: auto;
-  height: 600px;
+  height: 570px;
   background-image: url(./images/background.jpg);
 }
 
@@ -602,18 +603,25 @@ outline: none;
   width: 300px;
   height: 350px;
   padding: 10px;
-  border: #3e3e40;
-  border-style: solid;
 }
 
 .user_data{
-  width: 30%;
-  margin-top: 30px;
+  width: 25%;
+  margin-top: 15%;
+  border:#3e3e40;
+  border-style: solid;
+  max-height: fit-content;
+  justify-content: center;
+  text-align: center;
 }
 .user_data img{
-  margin-left:30%;
+  margin-left:1px;
   border-radius: 10px;
   border-style: solid;
+  margin-top: 3%;
+}
+#changephoto{
+  margin-left: 35%
 }
 .user_data h6{
   background: #E06262;
@@ -675,7 +683,7 @@ outline: none;
   text-align:center;
 }
 
-.admin_card1, .admin_card2, .admin_card3{
+.admin_card1{
   padding: 10px;
   height: 170px;
   margin-bottom: 10px;
@@ -683,6 +691,16 @@ outline: none;
   border-style: solid;
   cursor: pointer;
   background-color:white;
+  text-align: center;
+}
+ .admin_card2{
+  padding: 10px;
+  height: 170px;
+  margin-bottom: 10px;
+  border: #3e3e40;
+  border-style: solid;
+  cursor: pointer;
+  background-color:inherit;
   text-align: center;
 }
 
