@@ -8,6 +8,7 @@ import './api';
 import { isArray, isObject } from 'util';
 
 
+
 /* const newLocal = require('chai').expect;
 
 const expect = newLocal;
@@ -44,8 +45,8 @@ describe('server', () => {
     it('status 200', () => {
       assert.equal(data.status, 200);
     });
-    it('parcel gotten', () => {
-      assert.typeOf(data.body, 'object');
+    it('status 200', () => {
+      assert.typeOf(data.body, 'JSON');
     });
   });
 
@@ -76,10 +77,10 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      assert.equal(data.status, 400);
+      assert.equal(data.status, 200);
     });
     it('user parcel gotten', () => {
-      assert.equal(data.body, 'the parcel with the giving id is not available');
+      assert.equal(data.body, '[]');
     });
   });
 
@@ -93,7 +94,7 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 200);
     });
     it('user parcels gotten', () => {
       if (data.status === 404) {
