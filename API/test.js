@@ -5,13 +5,6 @@
 import { post, get, put } from 'request';
 import { assert, should, expect } from 'chai';
 import './api';
-import { isArray, isObject } from 'util';
-
-
-/* const newLocal = require('chai').expect;
-
-const expect = newLocal;
-const should = require('chai').should(); */
 
 describe('server', () => {
   describe('post/api/users', () => {
@@ -27,15 +20,14 @@ describe('server', () => {
       assert.equal(data.status, 200);
     });
     it('added user it should return type of object', () => {
-      // isArray(data.body, {});
-      assert.equal(data.body, '{}');
+      expect(JSON.parse(data.body)).to.be.an('object');
     });
   });
 
   describe('post/api/parcels', () => {
     const data = {};
     before((done) => {
-      post('http://localhost:8000/api/v1/parcels', (error, res, body) => {
+      post('http://localhost:8000/api/v1/parcels', (error, res) => {
         data.status = res.statusCode;
         data.body = res.body;
         done();
@@ -44,15 +36,15 @@ describe('server', () => {
     it('status 200', () => {
       assert.equal(data.status, 200);
     });
-    it('parcel gotten', () => {
-      assert.typeOf(data.body, 'object');
+    it('status 200', () => {
+      expect(JSON.parse(data.body)).to.be.an('object');
     });
   });
 
   describe('get/api/parcels', () => {
     const data = {};
     before((done) => {
-      get('http://localhost:8000/api/v1/parcels', (error, res, body) => {
+      get('http://localhost:8000/api/v1/parcels', (error, res) => {
         data.status = res.statusCode;
         data.body = res.body;
         done();
@@ -62,7 +54,7 @@ describe('server', () => {
       assert.equal(data.status, 200);
     });
     it('parcel gotten', () => {
-      isArray(data.body, []);
+      expect(JSON.parse(data.body)).to.be.an('array');
     });
   });
 
@@ -76,30 +68,30 @@ describe('server', () => {
       });
     });
     it('status', () => {
-      assert.equal(data.status, 400);
+      assert.equal(data.status, 200);
     });
     it('user parcel gotten', () => {
-      assert.equal(data.body, 'the parcel with the giving id is not available');
+      expect(JSON.parse(data.body)).to.be.an('Array');
     });
   });
 
   describe('get/api/users/:userid/parcels', () => {
     const data = {};
     before((done) => {
-      get('http://localhost:8000/api/v1/users/:userid/parcels', (error, res, body) => {
+      get('http://localhost:8000/api/v1/users/:userid/parcels', (error, res) => {
         data.status = res.statusCode;
-        data.body = body;
+        data.body = res.body;
         done();
       });
     });
     it('status', () => {
-      assert.equal(data.status, 404);
+      assert.equal(data.status, 200);
     });
     it('user parcels gotten', () => {
       if (data.status === 404) {
         assert.equal(data.body, 'the user with that id is not available');
       } else {
-        isArray(data.body, {});
+        expect(JSON.parse(data.body)).to.be.an('object');
       }
     });
   });
@@ -107,20 +99,20 @@ describe('server', () => {
   describe('PUT/api/parcels/parcelid', () => {
     const data = {};
     before((done) => {
-      put('http://localhost:8000/api/v1/parcels/:parcelid/cancel', (error, res, body) => {
+      put('http://localhost:8000/api/v1/parcels/:parcelid/cancel', (error, res) => {
         data.status = res.statusCode;
-        data.body = body;
+        data.body = res.body;
         done();
       });
     });
     it('status', () => {
       assert.equal(data.status, 400);
     });
-    it('specific parcel gotten', () => {
+    it('specific parcel cancelled', () => {
       if (data.status === 400) {
         assert.equal(data.body, 'Nothing to cancel');
       } else {
-        isArray(data.body, {});
+        assert.equal(data.body, 'you have successfully cancelled the delivery order');
       }
     });
   });

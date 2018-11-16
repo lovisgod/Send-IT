@@ -32,7 +32,7 @@ export const getparcels = (req, res) => {
 
 export const getparcelswithid = (req, res) => {
   // eslint-disable-next-line radix
-  const gettheparcels = models.parcels.find(c => c.parcelid === parseInt(req.params.parcelid));
+  const gettheparcels = models.parcels.filter(c => c.parcelid === parseInt(req.params.parcelid));
 
   if (!gettheparcels) {
     res.status(400).send('the parcel with the giving id is not available');
@@ -44,7 +44,7 @@ export const getparcelswithid = (req, res) => {
 export const getparcelsforuser = (req, res) => {
   // this is to check if the user have any parcel
   const userParcels = checks.getUserParcels(req.params.userid);
-  const getuser = models.users.find(c => c.userid === req.params.userid);
+  const getuser = models.users.filter(c => c.userid === req.params.userid);
   if (!getuser) {
     res.status(404).send('the user with that id is not available');
   } else {
@@ -52,6 +52,7 @@ export const getparcelsforuser = (req, res) => {
       // this send the user details as a json object
       user: getuser,
       parcels: userParcels,
+      number: userParcels.length,
     });
   }
 };
