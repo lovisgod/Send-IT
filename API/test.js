@@ -3,11 +3,9 @@
 /* eslint-disable no-unused-vars */
 
 import { post, get, put } from 'request';
-import { assert, should } from 'chai';
-// import { equal, deepEqual } from 'assert';
+import { assert, should, expect } from 'chai';
 import './api';
 import { isArray, isObject } from 'util';
-import { type } from 'os';
 
 
 /* const newLocal = require('chai').expect;
@@ -46,8 +44,8 @@ describe('server', () => {
     it('status 200', () => {
       assert.equal(data.status, 200);
     });
-    it('status 200', () => {
-      data.body.should.be('{}');
+    it('parcel gotten', () => {
+      assert.typeOf(data.body, 'object');
     });
   });
 

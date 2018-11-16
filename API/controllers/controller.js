@@ -20,6 +20,7 @@ export const postparcels = (req, res) => {
     userid: req.body.userid,
     status: req.body.status,
     weight: req.body.weight,
+    date: Date.now(),
   };
   models.parcels.push(parcel);
   res.status(200).send(parcel);

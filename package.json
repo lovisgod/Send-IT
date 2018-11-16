@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel API -d dist",
     "start": "npm run build && node dist/api.js",
-    "dev": "npm run build && nodemon dist/api.js",
+    "dev": "npm run build && node dist/api.js",
     "test": "npm run build && mocha  dist/test.js --exit || true"
   },
   "repository": {
