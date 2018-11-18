@@ -2,7 +2,7 @@
 const joi = require('joi');
 
 
-const validateparcels = (parcel) => {
+export const validateparcels = (parcel) => {
   const schema = {
     Name: joi.string().min(8).max(30).required(),
     Pickup: joi.string().min(8).max(50).required(),
@@ -16,4 +16,10 @@ const validateparcels = (parcel) => {
   return joi.validate(parcel, schema);
 };
 
-export default validateparcels;
+export const validateuser = (user) => {
+  const schema = {
+    Name: joi.string().min(8).max(30).required(),
+    userid: joi.string().required(),
+  };
+  return joi.validate(user, schema);
+};
