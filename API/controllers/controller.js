@@ -1,5 +1,7 @@
+/* eslint-disable linebreak-style */
 import * as models from '../models';
 import * as checks from '../check';
+import validateparcels from '../validator/validator';
 
 export const postuser = (req, res) => {
   const user = {
@@ -11,15 +13,21 @@ export const postuser = (req, res) => {
 };
 
 export const postparcels = (req, res) => {
+  const { error } = validateparcels(req.body);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
   const parcel = {
     parcelid: models.parcels.length + 1,
-    name: req.body.name,
-    reciever: req.body.reciever,
-    from: req.body.from,
-    to: req.body.to,
+    Name: req.body.Name,
+    Pickup: req.body.Pickup,
+    Destination: req.body.Destination,
+    Reciever: req.body.Reciever,
     userid: req.body.userid,
+    RecieverMail: req.body.RecieverMail,
     status: req.body.status,
-    weight: req.body.weight,
+    Weight: req.body.Weight,
     date: Date.now(),
   };
   models.parcels.push(parcel);
