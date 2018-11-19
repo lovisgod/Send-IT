@@ -10,11 +10,3 @@ export const getUserParcels = (userId) => {
   }
   return getid;
 };
-
-export const checkdelivered = () => {
-  const getstatus = parcels.filter(c => c.status === 'delivered');
-  if (!getstatus) {
-    return 0;
-  }
-  return getstatus.length;
-};

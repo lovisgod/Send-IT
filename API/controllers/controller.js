@@ -1,19 +1,23 @@
 /* eslint-disable linebreak-style */
 import * as models from '../models';
 import * as checks from '../check';
-import validateparcels from '../validator/validator';
+import * as valid from '../validator/validator';
 
 export const postuser = (req, res) => {
+  const { error } = valid.validateuser(req.body);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+  }
   const user = {
+    Name: req.body.Name,
     userid: req.body.userid,
-    name: req.body.name,
   };
   models.users.push(user);
   res.status(200).send(user);
 };
 
 export const postparcels = (req, res) => {
-  const { error } = validateparcels(req.body);
+  const { error } = valid.validateparcels(req.body);
   if (error) {
     res.status(400).send(error.details[0].message);
     return;
