@@ -1,11 +1,10 @@
 import * as model from './models';
 
-// eslint-disable-next-line prefer-destructuring
-const parcels = model.parcels;
 
-// eslint-disable-next-line import/prefer-default-export
+const { parcels } = model.parcels;
+
 export const getUserParcels = (userId) => {
-  const getid = parcels.find(c => c.userid === userId);
+  const getid = parcels.filter(c => c.userid === userId);
   if (!getid) {
     return 'no parcels for user';
   }
