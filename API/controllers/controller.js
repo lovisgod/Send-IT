@@ -116,3 +116,33 @@ export const canceltheorder = (req, res) => {
     res.send({ status: 'You cant cancel an already delivered order!!!' });
   }
 };
+
+export const changedestination = (req, res) => {
+  const id = parseInt(req.params.parcelid, 10);
+  const { Destination } = req.body;
+
+  pool.connect((err) => {
+    if (err) {
+      res.status(404).send('error fetching client from pool', err);
+    }
+    pool.query('UPDATE "Parcels" SET "Destination" =$1  WHERE parcelid = $2',
+      [Destination, id]);
+    res.status(200).send('You have Successfully change your order destination');
+    pool.end();
+  });
+};
+
+export const changeorderstatus = (req, res) => {
+  const id = parseInt(req.params.parcelid, 10);
+  const { status } = req.body;
+
+  pool.connect((err) => {
+    if (err) {
+      res.status(404).send('error fetching client from pool', err);
+    }
+    pool.query('UPDATE "Parcels" SET "status" =$1  WHERE parcelid = $2',
+      [status, id]);
+    res.status(200).send('Status successfully changed');
+    pool.end();
+  });
+};
