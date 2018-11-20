@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+
 const { Pool } = require('pg');
 
 const pool = new Pool({
