@@ -2,18 +2,34 @@
 import * as models from '../models';
 import * as checks from '../check';
 import * as valid from '../validator/validator';
+import pool from '../database/database';
 
-export const postuser = (req, res) => {
+process.on('uncaughtException', (err) => {
+  console.error(err);
+  console.log('Node NOT Exiting...');
+});
+
+export const signupuser = (req, res) => {
   const { error } = valid.validateuser(req.body);
   if (error) {
     res.status(400).send(error.details[0].message);
+    return;
   }
   const user = {
-    Name: req.body.Name,
+    FirstName: req.body.FirstName,
+    LastName: req.body.LastName,
     userid: req.body.userid,
+    password: req.body.password,
   };
-  models.users.push(user);
-  res.status(200).send(user);
+  pool.connect((err) => {
+    if (err) {
+      res.status(404).send('error fetching client from pool', err);
+    }
+    pool.query('INSERT INTO "Users"("FirstName", "LastName", "userid", "password") VALUES($1, $2, $3, $4)',
+      [user.FirstName, user.LastName, user.userid, user.password]);
+    res.status(200).send('You have Successfully Signed Up');
+    pool.end();
+  });
 };
 
 export const postparcels = (req, res) => {
@@ -23,24 +39,42 @@ export const postparcels = (req, res) => {
     return;
   }
   const parcel = {
-    parcelid: models.parcels.length + 1,
     Name: req.body.Name,
     Pickup: req.body.Pickup,
     Destination: req.body.Destination,
     Reciever: req.body.Reciever,
     userid: req.body.userid,
     RecieverMail: req.body.RecieverMail,
-    status: req.body.status,
     Weight: req.body.Weight,
-    date: Date.now(),
+    status: req.body.status,
   };
-  models.parcels.push(parcel);
-  res.status(200).send(parcel);
+  pool.connect((err) => {
+    if (err) {
+      res.status(404).send('error fetching client from pool', err);
+    }
+    pool.query('INSERT INTO "Parcels"("Name", "Pickup", "Destination", "Reciever", "userid", "RecieverMail", "Weight", "status") VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
+      [parcel.Name, parcel.Pickup, parcel.Destination, parcel.Reciever, parcel.userid,
+        parcel.RecieverMail, parcel.Weight, parcel.status]);
+    res.status(200).send('Parcel Added');
+    pool.end();
+  });
 };
 
 export const getparcels = (req, res) => {
-  res.status(200).send(models.parcels);
+  pool.connect((err) => {
+    if (err) {
+      res.status(404).send('error fetching client from pool', err);
+    }
+    pool.query('SELECT * FROM "Parcels"', (err, response) => {
+      if (err) {
+        res.status(404).send('error running query', err);
+      }
+      res.status(200).send(response.rows);
+      pool.end();
+    });
+  });
 };
+
 
 export const getparcelswithid = (req, res) => {
   // eslint-disable-next-line radix
