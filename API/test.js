@@ -1,17 +1,15 @@
-/* eslint-disable linebreak-style */
 /* eslint-env mocha */
 
-/* eslint-disable no-unused-vars */
 
 import { post, get, put } from 'request';
-import { assert, should, expect } from 'chai';
+import { assert, expect } from 'chai';
 import './api';
 
 describe('server', () => {
   describe('post/api/users', () => {
     const data = {};
     before((done) => {
-      post('http://localhost:8000/api/v1/users', (error, res, body) => {
+      post('http://localhost:8000/api/v1/users', (error, res) => {
         data.status = res.statusCode;
         data.body = res.body;
         done();
@@ -62,7 +60,7 @@ describe('server', () => {
   describe('get/api/parcels/:parcelid', () => {
     const data = {};
     before((done) => {
-      get('http://localhost:8000/api/v1/parcels/:parcelid', (error, res, body) => {
+      get('http://localhost:8000/api/v1/parcels/:parcelid', (error, res) => {
         data.status = res.statusCode;
         data.body = res.body;
         done();

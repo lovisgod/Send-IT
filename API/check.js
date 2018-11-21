@@ -1,6 +1,5 @@
 import * as model from './models';
 
-
 const { parcels } = model.parcels;
 
 export const getUserParcels = (userId) => {

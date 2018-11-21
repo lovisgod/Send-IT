@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import * as models from '../models';
 import * as checks from '../check';
 import validateparcels from '../validator/validator';
