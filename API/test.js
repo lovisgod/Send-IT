@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* eslint-env mocha */
 
 import { post, get, put } from 'request';

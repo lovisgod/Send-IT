@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+
 import * as model from './models';
 
 const { parcels } = model.parcels;
