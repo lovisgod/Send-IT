@@ -1,15 +1,14 @@
 /* eslint-env mocha */
 
-
 import { post, get, put } from 'request';
 import { assert, expect } from 'chai';
 import './api';
 
 describe('server', () => {
-  describe('post/api/users', () => {
+  describe('post/api/auth/signupuser', () => {
     const data = {};
     before((done) => {
-      post('http://localhost:8000/api/v1/users', (error, res) => {
+      post('http://localhost:8000/api/v1/auth/signup', (error, res) => {
         data.status = res.statusCode;
         data.body = res.body;
         done();
