@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import * as models from '../models';
 import * as checks from '../check';
 import * as valid from '../validator/validator';
@@ -77,8 +76,9 @@ export const getparcels = (req, res) => {
 
 
 export const getparcelswithid = (req, res) => {
-  // eslint-disable-next-line radix
-  const gettheparcels = models.parcels.filter(c => c.parcelid === parseInt(req.params.parcelid));
+  const gettheparcels = models.parcels.filter(c => c.parcelid === parseInt(
+    req.params.parcelid, 10
+  ));
 
   if (!gettheparcels) {
     res.status(400).send('the parcel with the giving id is not available');
@@ -104,8 +104,7 @@ export const getparcelsforuser = (req, res) => {
 };
 
 export const canceltheorder = (req, res) => {
-  // eslint-disable-next-line radix
-  const parcelToCancel = models.parcels.find(c => c.parcelid === parseInt(req.params.parcelid));
+  const parcelToCancel = models.parcels.find(c => c.parcelid === parseInt(req.params.parcelid, 10));
   if (!parcelToCancel) {
     res.status(400).send('Nothing to cancel');
   } else {
