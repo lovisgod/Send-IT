@@ -2,6 +2,8 @@ import * as models from '../models';
 import * as checks from '../check';
 import * as valid from '../validator/validator';
 import pool from '../database/database';
+import harshing from '../bcrypt/bcrypt';
+
 
 process.on('uncaughtException', (err) => {
   console.error(err);
@@ -20,15 +22,39 @@ export const signupuser = (req, res) => {
     userid: req.body.userid,
     password: req.body.password,
   };
+  const harsh = harshing.toharsh(user.password);
   pool.connect((err) => {
     if (err) {
-      res.status(404).send('error fetching client from pool', err);
+      return res.status(404).send('error fetching client from pool', err);
     }
     pool.query('INSERT INTO "Users"("FirstName", "LastName", "userid", "password") VALUES($1, $2, $3, $4)',
-      [user.FirstName, user.LastName, user.userid, user.password]);
+      [user.FirstName, user.LastName, user.userid, harsh]);
     res.status(200).send('You have Successfully Signed Up');
     pool.end();
   });
+};
+
+export const loginuser = (req, res) => {
+  const { error } = valid.validateuserlogin(req.body);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
+  const { userid, password } = req.body;
+
+  pool.query('SELECT * FROM "Users" WHERE userid = $1',
+    [userid], (err, result) => {
+      if (err) {
+        return res.status(401).send('Bad requeest');
+      }
+      if (result) {
+        const harsh = result.rows[0].password;
+        const istrue = harshing.checkharsh(password, harsh);
+        res.send('You are successfuly logged in');
+        return istrue;
+      }
+      return res.status(401).json({ failed: 'Unauthorized Access' });
+    });
 };
 
 export const postparcels = (req, res) => {
@@ -51,9 +77,11 @@ export const postparcels = (req, res) => {
     if (err) {
       res.status(404).send('error fetching client from pool', err);
     }
-    pool.query('INSERT INTO "Parcels"("Name", "Pickup", "Destination", "Reciever", "userid", "RecieverMail", "Weight", "status") VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
+    pool.query(
+      'INSERT INTO "Parcels"("Name", "Pickup", "Destination", "Reciever", "userid", "RecieverMail", "Weight", "status") VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
       [parcel.Name, parcel.Pickup, parcel.Destination, parcel.Reciever, parcel.userid,
-        parcel.RecieverMail, parcel.Weight, parcel.status]);
+        parcel.RecieverMail, parcel.Weight, parcel.status]
+    );
     res.status(200).send('Parcel Added');
     pool.end();
   });
