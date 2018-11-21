@@ -25,3 +25,11 @@ export const validateuser = (user) => {
   };
   return joi.validate(user, schema);
 };
+
+export const validateuserlogin = (user) => {
+  const schema = {
+    userid: joi.string().min(8).max(15).required(),
+    password: joi.string().required(),
+  };
+  return joi.validate(user, schema);
+};
