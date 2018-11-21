@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const joi = require('joi');
 
 
@@ -11,15 +10,17 @@ export const validateparcels = (parcel) => {
     userid: joi.string().min(3).max(255).required(),
     RecieverMail: joi.string().min(8).max(255).required(),
     Weight: joi.number().required(),
-    status: 'In-Transit',
+    status: 'Transit',
   };
   return joi.validate(parcel, schema);
 };
 
 export const validateuser = (user) => {
   const schema = {
-    Name: joi.string().min(8).max(30).required(),
-    userid: joi.string().required(),
+    FirstName: joi.string().min(8).max(15).required(),
+    LastName: joi.string().min(8).max(15).required(),
+    userid: joi.string().min(8).max(15).required(),
+    password: joi.string().required(),
   };
   return joi.validate(user, schema);
 };
