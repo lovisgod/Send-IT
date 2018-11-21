@@ -12,6 +12,7 @@ export const validateparcels = (parcel) => {
     RecieverMail: joi.string().min(8).max(255).required(),
     Weight: joi.number().required(),
     status: 'Transit',
+    location: 'Send-IT Warehouse',
   };
   return joi.validate(parcel, schema);
 };
