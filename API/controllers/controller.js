@@ -1,14 +1,6 @@
-import * as models from '../models';
-import * as checks from '../check';
 import * as valid from '../validator/validator';
 import pool from '../database/database';
 import harshing from '../bcrypt/bcrypt';
-
-
-process.on('uncaughtException', (err) => {
-  console.error(err);
-  console.log('Node NOT Exiting...');
-});
 
 export const signupuser = (req, res) => {
   const { error } = valid.validateuser(req.body);
@@ -29,8 +21,7 @@ export const signupuser = (req, res) => {
     }
     pool.query('INSERT INTO "Users"("FirstName", "LastName", "userid", "password") VALUES($1, $2, $3, $4)',
       [user.FirstName, user.LastName, user.userid, harsh]);
-    res.status(200).send('You have Successfully Signed Up');
-    pool.end();
+    return res.status(200).send('You have Successfully Signed Up');
   });
 };
 
@@ -72,18 +63,18 @@ export const postparcels = (req, res) => {
     RecieverMail: req.body.RecieverMail,
     Weight: req.body.Weight,
     status: req.body.status,
+    location: req.body.location,
   };
   pool.connect((err) => {
     if (err) {
-      res.status(404).send('error fetching client from pool', err);
+      return res.status(404).send('error fetching client from pool', err);
     }
     pool.query(
-      'INSERT INTO "Parcels"("Name", "Pickup", "Destination", "Reciever", "userid", "RecieverMail", "Weight", "status") VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
+      'INSERT INTO "Parcels"("Name", "Pickup", "Destination", "Reciever", "userid", "RecieverMail", "Weight", "status", "location" ) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)',
       [parcel.Name, parcel.Pickup, parcel.Destination, parcel.Reciever, parcel.userid,
-        parcel.RecieverMail, parcel.Weight, parcel.status]
+        parcel.RecieverMail, parcel.Weight, parcel.status, parcel.location]
     );
-    res.status(200).send('Parcel Added');
-    pool.end();
+    return res.status(200).send('Parcel Added');
   });
 };
 
@@ -96,50 +87,53 @@ export const getparcels = (req, res) => {
       if (err) {
         res.status(404).send('error running query', err);
       }
-      res.status(200).send(response.rows);
-      pool.end();
+      return res.status(200).send(response.rows);
     });
   });
 };
 
 
 export const getparcelswithid = (req, res) => {
-  const gettheparcels = models.parcels.filter(c => c.parcelid
-    === parseInt(req.params.parcelid, 10));
-  if (!gettheparcels) {
-    res.status(400).send('the parcel with the giving id is not available');
-  } else {
-    res.status(200).send(gettheparcels);
-  }
+  const { parcelid } = req.params;
+  pool.query('SELECT * FROM "Parcels" WHERE parcelid = $1',
+    [parcelid], (err, result) => {
+      if (err) {
+        return res.status(404).send('the parcel with the giving id is not available');
+      }
+      if (result) {
+        return res.status(200).send(result.rows[0]);
+      }
+    });
 };
 // this api endpoint for the user order history
 export const getparcelsforuser = (req, res) => {
   // this is to check if the user have any parcel
-  const userParcels = checks.getUserParcels(req.params.userid);
-  const getuser = models.users.filter(c => c.userid === req.params.userid);
-  if (!getuser) {
-    res.status(404).send('the user with that id is not available');
-  } else {
-    res.status(200).send({
-      // this send the user details as a json object
-      user: getuser,
-      parcels: userParcels,
-      number: userParcels.length,
+  const { userid } = req.params;
+  pool.query('SELECT * FROM "Parcels" WHERE userid = $1',
+    [userid], (err, result) => {
+      if (err) {
+        return res.status(404).send('NO PARCEL AVAILABLE FOR USER');
+      }
+      if (result) {
+        return res.status(200).send(result.rows);
+      }
     });
-  }
 };
 
 export const canceltheorder = (req, res) => {
-  const parcelToCancel = models.parcels.find(c => c.parcelid === parseInt(req.params.parcelid, 10));
-  if (!parcelToCancel) {
-    res.status(400).send('Nothing to cancel');
-  } else {
-    if (parcelToCancel.status !== 'delivered') {
-      parcelToCancel.status = 'cancelled';
-      res.status(200).send('you have successfully cancelled the delivery order');
-    }
-    res.send({ status: 'You cant cancel an already delivered order!!!' });
-  }
+  const { parcelid } = req.params;
+  pool.query('SELECT * FROM "Parcels" WHERE parcelid = $1',
+    [parcelid], (err, result) => {
+      if (err) {
+        return res.status(404).send('NO CANT CANCEL UNKNOWN ORDER');
+      }
+      if (result.status !== 'Delivered') {
+        pool.query('UPDATE "Parcels" SET "status" =$1  WHERE parcelid = $2',
+          ['Canceled', parcelid]);
+        return res.status(200).send('ORDER CANCELED');
+      }
+      return res.status(404).send('Cant candel already delivered order');
+    });
 };
 
 export const changedestination = (req, res) => {
@@ -152,8 +146,7 @@ export const changedestination = (req, res) => {
     }
     pool.query('UPDATE "Parcels" SET "Destination" =$1  WHERE parcelid = $2',
       [Destination, id]);
-    res.status(200).send('You have Successfully change your order destination');
-    pool.end();
+    return res.status(200).send('You have Successfully change your order destination');
   });
 };
 
@@ -167,7 +160,21 @@ export const changeorderstatus = (req, res) => {
     }
     pool.query('UPDATE "Parcels" SET "status" =$1  WHERE parcelid = $2',
       [status, id]);
-    res.status(200).send('Status successfully changed');
-    pool.end();
+    return res.status(200).send('Status successfully changed');
   });
+};
+
+export const changeorderlocation = (req, res) => {
+  const id = parseInt(req.params.parcelid, 10);
+  const { location } = req.body;
+
+  pool.query('UPDATE "Parcels" SET "location" =$1 WHERE parcelid = $2',
+    [location, id], (err, result) => {
+      if (err) {
+        return res.status(401).send('BAD REQUEST');
+      }
+      if (result) {
+        return res.status(200).send('ORDER LOCATION CHANGED');
+      }
+    });
 };
