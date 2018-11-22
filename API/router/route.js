@@ -1,18 +1,19 @@
 
 import express from 'express';
-import * as controllers from '../controllers/controller';
+import usercontrol from '../controllers/usercontroller';
+import parcelcontrol from '../controllers/controller';
 
 const router = express.Router();
 
-router.post('/auth/signup', controllers.signupuser);
-router.post('/auth/login', controllers.loginuser);
-router.post('/parcels', controllers.postparcels);
-router.get('/parcels', controllers.getparcels);
-router.get('/parcels/:parcelid', controllers.getparcelswithid);
-router.get('/users/:userid/parcels', controllers.getparcelsforuser);
-router.put('/parcels/:parcelid/cancel', controllers.canceltheorder);
-router.put('/parcels/:parcelid/changedestination', controllers.changedestination);
-router.put('/parcels/:parcelid/changestatus', controllers.changeorderstatus);
-router.put('/parcels/:parcelid/presentlocation', controllers.changeorderlocation);
+router.post('/auth/signup', usercontrol.signupuser);
+router.post('/auth/login', usercontrol.loginuser);
+router.post('/parcels', parcelcontrol.postparcels);
+router.get('/parcels', parcelcontrol.getparcels);
+router.get('/parcels/:parcelid', parcelcontrol.getparcelswithid);
+router.get('/users/:userid/parcels', usercontrol.getparcelsforuser);
+router.put('/parcels/:parcelid/cancel', usercontrol.canceltheorder);
+router.put('/parcels/:parcelid/changedestination', parcelcontrol.changedestination);
+router.put('/parcels/:parcelid/changestatus', parcelcontrol.changeorderstatus);
+router.put('/parcels/:parcelid/presentlocation', parcelcontrol.changeorderlocation);
 
 export default router;
