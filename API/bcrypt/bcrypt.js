@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 const bcrypt = require('bcrypt');
 
 class harshing {
