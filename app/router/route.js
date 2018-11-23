@@ -1,4 +1,3 @@
-
 import express from 'express';
 import usercontrol from '../controllers/usercontroller';
 import parcelcontrol from '../controllers/controller';

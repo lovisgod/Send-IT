@@ -1,6 +1,5 @@
 import validating from '../validator/validator';
 import pool from '../database/database';
-import harshing from '../bcrypt/bcrypt';
 
 const jwt = require('jsonwebtoken');
 

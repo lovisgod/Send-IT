@@ -2,7 +2,7 @@
   "name": "send_it",
   "version": "1.0.0",
   "description": "Send-IT is a project developed during the andela bootcamp chanllenge. Its a currier service for product delivery .",
-  "main": "dist/api.js",
+  "main": "app/api.js",
   "scripts": {
     "build": "babel app -d dist",
     "start": "npm run build && node dist/api.js",

@@ -4,13 +4,13 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const pool = new Pool({
+export const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
-const query = [
+export const query = [
   `CREATE TABLE IF NOT EXISTS
-      Parcels(
+      "Parcels"(
         parcelid serial PRIMARY KEY NOT NULL,
         "Name" character(80)  NOT NULL,
         "Pickup" character(80) NOT NULL,
@@ -23,7 +23,7 @@ const query = [
         location character(50)
     );`,
   `CREATE TABLE IF NOT EXISTS
-      Users(
+      "Users"(
         "FirstName" character(15) NOT NULL,
         "LastName" character(15)NOT NULL,
         userid character(20) PRIMARY KEY NOT NULL,
@@ -33,4 +33,3 @@ const query = [
 ];
 
 query.forEach(qued => pool.query(qued, error => console.log(error)));
-export default pool;

@@ -308,12 +308,12 @@ padding: 15px;
 }
 
 .btn_admin{
-  width: 50%;
-  margin-left:25%; 
+  width: 40%;
+  margin-left:28%; 
   background:#E06262;
-  height: 60px;
+  height: 30px;
   text-align: center;
-  line-height: 60px;
+  line-height: 30px;
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
@@ -322,12 +322,6 @@ padding: 15px;
   margin-bottom: 10px;
   border-radius: 2%;
 }
-/*.book-order{
-  display: flex;
-  background: #ffffff;
-  max-width: 70%;
-  margin-left: 32%;
-}*/
 .form-item{
   padding: 0;
   width: 100%;
