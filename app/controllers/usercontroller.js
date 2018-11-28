@@ -45,9 +45,12 @@ class usercontrol {
           console.log(err);
           return res.status(401).send('Bad requeest');
         }
-        const { rows } = result;
-        const token = jwt.sign({ userid: rows.userid, isadmin: rows.isadmin }, 'secretkey');
-        return res.json({ token });
+        console.log(result.rows[0]);
+        jwt.sign({ userid: result.rows[0].userid, isadmin: result.rows[0].isadmin }, 'mysecretkey', (err, token) => {
+          res.json({
+            token
+          });
+        });
       });
   }
 
@@ -83,26 +86,47 @@ class usercontrol {
   }
 
   static changedestination(req, res) {
-    const token = req.body.token || req.headers.token;
-    if (token) {
-      jwt.verify(token, 'secretkey', (err) => {
-        if (err) {
-          res.status(500).send('error');
-        }
-        const id = parseInt(req.params.parcelid, 10);
-        const { Destination, userid } = req.body;
-
-        pool.connect((err) => {
-          if (err) {
-            res.status(404).send('error fetching client from pool', err);
-          }
-          pool.query('UPDATE "Parcels" SET "Destination" =$1  WHERE parcelid = $2 AND userid =$3',
-            [Destination, id, userid]);
-          return res.status(200).send('You have Successfully change your order destination');
-        });
-      });
-    }
+    // usercontrol.verify();
+    const id = parseInt(req.params.parcelid, 10);
+    const { Destination } = req.body;
+    // jwt.verify(req.token, 'mysecretkey', (err, authData) => {
+    //   if (err) {
+    //     res.sendStatus(403);
+    //   }
+    pool.connect((err) => {
+      if (err) {
+        res.status(404).send('error fetching client from pool', err);
+      }
+      pool.query('UPDATE "Parcels" SET "Destination" =$1  WHERE parcelid = $2',
+        [Destination, id]);
+      res.send('You have successfully change you parcel\'s destination');
+      // res.json({
+      //   message: 'post created',
+      //   authData
+      // });
+    });
   }
+
+
+  // static verify(req, res, next) {
+  //   const bearerHeader = req.headers.authorization;
+  //   // check if bearer is undifined
+  //   if (typeof bearerHeader !== 'undefined') {
+  //     // spit at the space
+  //     // what the split does it turn a string into an array
+  //     const bearer = bearerHeader.split(' ');
+  //     // get token from array
+  //     const bearerToken = bearer[1];
+
+  //     // set token
+  //     req.token = bearerToken;
+  //     next();
+  //   }
+  //   // forbidden
+  //   res.send({
+  //     message: 'forbidden'
+  //   });
+  // }
 }
 
 export default usercontrol;
